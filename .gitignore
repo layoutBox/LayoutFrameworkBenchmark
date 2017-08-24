@@ -1,0 +1,17 @@
+# Build Directory
+build/
+DerivedData/
+build.log
+
+# User Data
+*.xctimeline
+xcuserdata
+
+# mkdocs
+site/
+
+# macOS
+.DS_Store
+
+Pods/
+data/

@@ -9,7 +9,8 @@ platform :ios, '10.0'
 inhibit_all_warnings!
 
 target 'LayoutFrameworkBenchmark' do
-    pod 'PinLayout'
     pod 'FlexLayout'
+	pod 'LayoutKit'
+    pod 'PinLayout'
     pod 'Reveal-SDK'
 end
