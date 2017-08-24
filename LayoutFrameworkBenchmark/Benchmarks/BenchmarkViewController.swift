@@ -118,7 +118,7 @@ class BenchmarkViewController: UITableViewController {
     }
 
     private func benchmark(_ viewControllerData: ViewControllerData) {
-        let iterations = [1/*, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 100*/]
+        let iterations = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 100]
         for i in iterations {
             let description = "\(i)\tsubviews\t\(viewControllerData.title)"
             Stopwatch.benchmark(description, block: { (stopwatch: Stopwatch) -> Void in
