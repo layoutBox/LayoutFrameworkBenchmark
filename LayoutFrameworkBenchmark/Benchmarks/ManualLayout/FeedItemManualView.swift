@@ -129,39 +129,39 @@ class FeedItemManualView: UIView, DataBinder {
         actionLabel.sizeToFit()
 
         posterImageView.frame = CGRect(x: 0, y: actionLabel.frame.bottom, width: posterImageView.frame.width, height: 0)
-//        posterImageView.sizeToFit()
+        posterImageView.sizeToFit()
 
         let contentInsets = UIEdgeInsets(top: 0, left: 1, bottom: 2, right: 3)
         let posterLabelWidth = bounds.width-posterImageView.frame.width - contentInsets.left - contentInsets.right
         posterNameLabel.frame = CGRect(x: posterImageView.frame.right + contentInsets.left, y: posterImageView.frame.origin.y + contentInsets.top, width: posterLabelWidth, height: 0)
-//        posterNameLabel.sizeToFit()
+        posterNameLabel.sizeToFit()
 
         let spacing: CGFloat = 1
         posterHeadlineLabel.frame = CGRect(x: posterImageView.frame.right + contentInsets.left, y: posterNameLabel.frame.bottom + spacing, width: posterLabelWidth, height: 0)
         posterHeadlineLabel.sizeToFit()
 
         posterTimeLabel.frame = CGRect(x: posterImageView.frame.right + contentInsets.left, y: posterHeadlineLabel.frame.bottom + spacing, width: posterLabelWidth, height: 0)
-//        posterTimeLabel.sizeToFit()
+        posterTimeLabel.sizeToFit()
 
         posterCommentLabel.frame = CGRect(x: 0, y: max(posterImageView.frame.bottom, posterTimeLabel.frame.bottom + contentInsets.bottom), width: frame.width, height: 0)
-//        posterCommentLabel.sizeToFit()
+        posterCommentLabel.sizeToFit()
 
         contentImageView.frame = CGRect(x: frame.width/2 - contentImageView.frame.width/2, y: posterCommentLabel.frame.bottom, width: frame.width, height: 0)
-//        contentImageView.sizeToFit()
+        contentImageView.sizeToFit()
 
         contentTitleLabel.frame = CGRect(x: 0, y: contentImageView.frame.bottom, width: frame.width, height: 0)
-//        contentTitleLabel.sizeToFit()
+        contentTitleLabel.sizeToFit()
 
         contentDomainLabel.frame = CGRect(x: 0, y: contentTitleLabel.frame.bottom, width: frame.width, height: 0)
         contentDomainLabel.sizeToFit()
 
         likeLabel.frame = CGRect(x: 0, y: contentDomainLabel.frame.bottom, width: 0, height: 0)
-//        likeLabel.sizeToFit()
+        likeLabel.sizeToFit()
 
-//        commentLabel.sizeToFit()
+        commentLabel.sizeToFit()
         commentLabel.frame = CGRect(x: frame.width/2-commentLabel.frame.width/2, y: contentDomainLabel.frame.bottom, width: commentLabel.frame.width, height: commentLabel.frame.height)
 
-//        shareLabel.sizeToFit()
+        shareLabel.sizeToFit()
         shareLabel.frame = CGRect(x: frame.width-shareLabel.frame.width, y: contentDomainLabel.frame.bottom, width: shareLabel.frame.width, height: shareLabel.frame.height)
 
         actorImageView.frame = CGRect(x: 0, y: likeLabel.frame.bottom, width: 0, height: 0)
