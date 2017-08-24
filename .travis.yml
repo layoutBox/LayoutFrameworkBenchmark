@@ -1,14 +1,10 @@
 language: objective-c
 osx_image: xcode8.3
 
-env:
-  matrix:
-    - SCHEME=LayoutFrameworkBenchmark       SDK=iphonesimulator10.3
-
 before_install:
   - gem install xcpretty-travis-formatter;
   - gem install cocoapods --no-document --quiet;
   - pod install --repo-update;
 
 script:
-  - set -o pipefail && xcodebuild -workspace LayoutFrameworkBenchmark.xcworkspace -scheme "$SCHEME" -sdk $SDK -destination 'platform=iOS Simulator,name=iPhone 6' -enableCodeCoverage YES build test GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES | xcpretty -f `xcpretty-travis-formatter`
+  - set -o pipefail && xcodebuild -workspace LayoutFrameworkBenchmark.xcworkspace -scheme LayoutFrameworkBenchmark -sdk iphonesimulator10.3 -destination 'platform=iOS Simulator,name=iPhone 6' -enableCodeCoverage YES build test GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES | xcpretty -f `xcpretty-travis-formatter`
