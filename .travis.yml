@@ -7,4 +7,4 @@ before_install:
   - pod install --repo-update;
 
 script:
-  - set -o pipefail && xcodebuild -workspace LayoutFrameworkBenchmark.xcworkspace -scheme LayoutFrameworkBenchmark -sdk iphonesimulator10.3 -destination 'platform=iOS Simulator,name=iPhone 6' -enableCodeCoverage YES build test GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES | xcpretty -f `xcpretty-travis-formatter`
+  - set -o pipefail && xcodebuild -workspace LayoutFrameworkBenchmark.xcworkspace -scheme LayoutFrameworkBenchmark -sdk iphonesimulator10.3 -destination 'platform=iOS Simulator,name=iPhone 6' build | xcpretty -f `xcpretty-travis-formatter`

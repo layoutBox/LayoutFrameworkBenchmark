@@ -1,5 +1,5 @@
 PODS:
-  - FlexLayout (1.1.0):
+  - FlexLayout (1.1.1):
     - YogaKit (~> 1.6)
   - LayoutKit (5.0.0)
   - PinLayout (1.2.1)
@@ -15,7 +15,7 @@ DEPENDENCIES:
   - Reveal-SDK
 
 SPEC CHECKSUMS:
-  FlexLayout: 88d58a804562791de4955ec00499d0f9b0ebaa42
+  FlexLayout: 93a7fd31d83e1dc888164f7de89fba685a4e982a
   LayoutKit: 09e015b77fe5cd58696c427d496704b9226876cf
   PinLayout: a0e88fc0a5888400144fe336d2300c4012e5f8cc
   Reveal-SDK: 7869ddf1f902cabbb07a1f0dd06bd25861a126f7
