@@ -48,7 +48,7 @@ Fast Swift UIViews layouting without auto layout. No magic, pure code, full cont
 [PinLayout benchmark's source code](https://github.com/lucdion/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/Benchmarks/PinLayout/FeedItemPinLayoutView.swift)
 
 * **UIStackViews**  
-Apple's UIStackViews, used internally auto layout.  
+Apple's UIStackViews.  
 [UIStackViews benchmark's source code](https://github.com/lucdion/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/Benchmarks/UIStackView/FeedItemUIStackView.swift)
 
 * [**Yoga**](https://github.com/facebook/yoga)  
@@ -103,6 +103,8 @@ The **X axis** in following charts indicates the **number of cells** contained f
 * OSX support.
 * tvOS support.
 * ...
+
+<br>
 
 ## Contributing, comments, ideas, suggestions, issues, .... <a name="comments"></a>
 For any **comments**, **ideas**, **suggestions**, simply open an [issue](https://github.com/lucdion/LayoutFrameworkBenchmark/issues). 
