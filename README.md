@@ -22,10 +22,17 @@ Benchmark the performances of various Swift layout frameworks.
 # History <a name="history"></a>
 This project is a spin-off of the excellent [LayoutKit benchmark](https://github.com/linkedin/LayoutKit). The benchmark has been extracted to add other iOS layout frameworks and to compare them.
 
+<br>
+
+# Why?
+Choosing the right layout framework for your project is an important decision. The frameworks API is quite important, but its performance is also important. To help you with that decision, this benchmark compare different layout frameworks.
+
+<br>
+
 # Layout frameworks  <a name="layout_frameworks"></a>
 
-**The benchmark include the following layout frameworks:**  
-(ordered alphabeticaly and use the framework GitHub's description):
+**The benchmark currently includes the following layout frameworks:**  
+(ordered alphabetically and use the framework GitHub's description):
 
 * **Auto layout**  
 Apple's auto layout constraints.  
@@ -98,7 +105,8 @@ The **X axis** in following charts indicates the **number of cells** contained f
 
 ## Project's TODO list
 
-* Automatize the benchmark to run all layout frameworks automatically.
+* Create a reference cell and update layout codes to match that reference.
+* Automate the benchmark to run all layout frameworks automatically.
 * Display benchmark charts inside the app and being to able to export them.
 * Export benchmark data to a spreadsheet.
 * Add more layout frameworks.
