@@ -12,7 +12,7 @@
 
 <br>
 
-COMMING SOON....
+Benchmark the performances of Swift layout frameworks.
 
 ### Requirements
 * iOS 8.0+
