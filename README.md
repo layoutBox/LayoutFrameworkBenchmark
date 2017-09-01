@@ -55,7 +55,7 @@ Apple's UIStackViews, used internally auto layout.
 :pushpin: Anyone who would like to integrate any other layout frameworks to this GitHub project is welcome.
 
 ## Benchmark details
-The benchmark layout UICollectionView and UITableView cells in multiple pass, each pass contains more cells than the previous one. The **X axis** in following charts indicates the **number of cells** contained for each pass. The **Y axis** indicates the **number of seconds** to render all cells from one pass.
+The benchmark layout UICollectionView and UITableView cells in multiple pass, each pass contains more cells than the previous one. 
 
 ## Benchmark cell's layout
 Here are the benchmark rendering results to compare visual results:
@@ -78,14 +78,16 @@ You can see the benchmark's raw data in this [spreadsheet](docs_markdown/benchma
 
 ## Benchmark charts  
 
-<p align="center">
-  <a href="docs_markdown/benchmark_iphone5.png"><img src="docs_markdown/benchmark_iphone5.png" alt="PinLayout Performance" width="500"/></a>
-  
-<p align="center">
-  <a href="docs_markdown/benchmark_iphone6.png"><img src="docs_markdown/benchmark_iphone6.png" alt="PinLayout Performance" width="500"/></a>
+The **X axis** in following charts indicates the **number of cells** contained for each pass. The **Y axis** indicates the **number of seconds** to render all cells from one pass.
 
 <p align="center">
-  <a href="docs_markdown/benchmark_iphone7.png"><img src="docs_markdown/benchmark_iphone7.png" alt="PinLayout Performance" width="500"/></a>
+  <a href="docs_markdown/benchmark_iphone5.png"><img src="docs_markdown/benchmark_iphone5.png" alt="PinLayout Performance"/></a>
+  
+<p align="center">
+  <a href="docs_markdown/benchmark_iphone6.png"><img src="docs_markdown/benchmark_iphone6.png" alt="PinLayout Performance"/></a>
+
+<p align="center">
+  <a href="docs_markdown/benchmark_iphone7.png"><img src="docs_markdown/benchmark_iphone7.png" alt="PinLayout Performance"/></a>
 
 <br>
 
