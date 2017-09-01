@@ -54,10 +54,10 @@ Apple's UIStackViews, used internally auto layout.
 
 :pushpin: Anyone who would like to integrate any other layout frameworks to this GitHub project is welcome.
 
-##### Benchmark details
+## Benchmark details
 The benchmark layout UICollectionView and UITableView cells in multiple pass, each pass contains more cells than the previous one. The **X axis** in following charts indicates the **number of cells** contained for each pass. The **Y axis** indicates the **number of seconds** to render all cells from one pass.
 
-##### Benchmark cell layout
+## Benchmark cell's layout
 Here are the benchmark rendering results to compare visual results:
  
 * [Auto layout rendering result](docs_markdown/benchmark_result_Autolayout.png)
