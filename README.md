@@ -36,7 +36,7 @@ Layout is done by setting UIView's frame property directly.
 [Manual layout benchmark's source code](https://github.com/lucdion/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/Benchmarks/ManualLayout/FeedItemManualView.swift)
 
 * [**FlexLayout**](https://github.com/lucdion/FlexLayout)  
-FlexLayout adds a nice Swift interface to the highly optimized facebook/yoga flexbox implementation. Concise, intuitive & chainable syntax.  
+FlexLayout adds a nice Swift interface to the highly optimized [Yoga](https://github.com/facebook/yoga) flexbox implementation. Concise, intuitive & chainable syntax.  
 [FlexLayout benchmark's source code](https://github.com/lucdion/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/Benchmarks/FlexLayout/FeedItemFlexLayoutView.swift)
 
 * [**LayoutKit**](https://github.com/linkedin/LayoutKit)  
@@ -50,6 +50,9 @@ Fast Swift UIViews layouting without auto layout. No magic, pure code, full cont
 * **UIStackViews**  
 Apple's UIStackViews, used internally auto layout.  
 [UIStackViews benchmark's source code](https://github.com/lucdion/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/Benchmarks/UIStackView/FeedItemUIStackView.swift)
+
+* [**Yoga**](https://github.com/facebook/yoga)  
+Yoga's performance hasn't been tested directly, but check FlexLayout's performance, it reflects the Yoga's performance, since FlexLayout is a Swift interface for Yoga. 
 
 
 :pushpin: Anyone who would like to integrate any other layout frameworks to this GitHub project is welcome.
