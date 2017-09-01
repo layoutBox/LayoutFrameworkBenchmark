@@ -12,7 +12,7 @@
 
 <br>
 
-Benchmark the performances of Swift layout frameworks.
+Benchmark the performances of various Swift layout frameworks.
 
 ### Requirements
 * iOS 8.0+
@@ -56,6 +56,8 @@ Yoga's performance hasn't been tested directly, but FlexLayout has. FlexLayout i
 
 
 :pushpin: Anyone who would like to integrate any other layout frameworks to this GitHub project is welcome.
+
+<br>
 
 ## Benchmark details
 The benchmark layout UICollectionView and UITableView cells in multiple pass, each pass contains more cells than the previous one. 
