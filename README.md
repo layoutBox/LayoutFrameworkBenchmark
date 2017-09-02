@@ -96,7 +96,7 @@ The **X axis** in following charts indicates the **number of cells** contained f
   <a href="docs_markdown/benchmark_iphone7.png"><img src="docs_markdown/benchmark_iphone7.png" alt="PinLayout Performance"/></a>
 
 <p align="center">
-  <a href="docs_markdown/benchmark_iphone6S.png"><img src="docs_markdown/benchmark_iphone6S.png" alt="PinLayout Performance"/></a>
+  <a href="docs_markdown/benchmark_iphone6s.png"><img src="docs_markdown/benchmark_iphone6s.png" alt="PinLayout Performance"/></a>
 
 <!--<p align="center">
   <a href="docs_markdown/benchmark_iphone6.png"><img src="docs_markdown/benchmark_iphone6.png" alt="PinLayout Performance"/></a>
