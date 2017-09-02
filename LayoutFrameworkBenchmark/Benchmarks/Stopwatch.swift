@@ -65,7 +65,7 @@ class Stopwatch {
             let opsPerSecond = NSString(format: "%8.2f", Double(iterationCount)/stopwatch.elapsedTime)
             let secondsPerOperation = NSString(format: "%8.3f", stopwatch.elapsedTime / Double(iterationCount))
             
-            print("\(opsPerSecond)\tops/s\t\(secondsPerOperation)\tseconds/ops\t\(iterations)\titerations\t\(name)\t")
+            print("\(opsPerSecond)\tops/s\t\(secondsPerOperation)\tseconds/ops\t\(iterations)\titerations\t\(name)")
         }
     }
 }

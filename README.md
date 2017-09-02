@@ -38,10 +38,6 @@ Choosing the right layout framework for your project is an important decision. T
 Apple's auto layout constraints.  
 [Auto layout benchmark's source code](https://github.com/lucdion/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/Benchmarks/AutoLayout/FeedItemAutoLayoutView.swift)
 
-* **Manual layout**  
-Layout is done by setting UIView's frame property directly.  
-[Manual layout benchmark's source code](https://github.com/lucdion/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/Benchmarks/ManualLayout/FeedItemManualView.swift)
-
 * [**FlexLayout**](https://github.com/lucdion/FlexLayout)  
 FlexLayout adds a nice Swift interface to the highly optimized [Yoga](https://github.com/facebook/yoga) flexbox implementation. Concise, intuitive & chainable syntax.  
 [FlexLayout benchmark's source code](https://github.com/lucdion/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/Benchmarks/FlexLayout/FeedItemFlexLayoutView.swift)
@@ -49,6 +45,10 @@ FlexLayout adds a nice Swift interface to the highly optimized [Yoga](https://gi
 * [**LayoutKit**](https://github.com/linkedin/LayoutKit)  
 LayoutKit is a fast view layout library for iOS, macOS, and tvOS.   
 [LayoutKit benchmark's source code](https://github.com/lucdion/LayoutFrameworkBenchmark/tree/master/LayoutFrameworkBenchmark/Benchmarks/LayoutKit)
+
+* **Manual layout**  
+Layout is done by setting UIView's frame property directly.  
+[Manual layout benchmark's source code](https://github.com/lucdion/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/Benchmarks/ManualLayout/FeedItemManualView.swift)
 
 * [**PinLayout**](https://github.com/mirego/PinLayout)  
 Fast Swift UIViews layouting without auto layout. No magic, pure code, full control and blazing fast. Concise syntax, intuitive, readable & chainable.  
@@ -93,13 +93,17 @@ You can see the benchmark's raw data in this [spreadsheet](docs_markdown/benchma
 The **X axis** in following charts indicates the **number of cells** contained for each pass. The **Y axis** indicates the **number of seconds** to render all cells from one pass.
 
 <p align="center">
-  <a href="docs_markdown/benchmark_iphone5.png"><img src="docs_markdown/benchmark_iphone5.png" alt="PinLayout Performance"/></a>
-  
+  <a href="docs_markdown/benchmark_iphone7.png"><img src="docs_markdown/benchmark_iphone7.png" alt="PinLayout Performance"/></a>
+
 <p align="center">
+  <a href="docs_markdown/benchmark_iphone6S.png"><img src="docs_markdown/benchmark_iphone6S.png" alt="PinLayout Performance"/></a>
+
+<!--<p align="center">
   <a href="docs_markdown/benchmark_iphone6.png"><img src="docs_markdown/benchmark_iphone6.png" alt="PinLayout Performance"/></a>
 
 <p align="center">
-  <a href="docs_markdown/benchmark_iphone7.png"><img src="docs_markdown/benchmark_iphone7.png" alt="PinLayout Performance"/></a>
+  <a href="docs_markdown/benchmark_iphone5.png"><img src="docs_markdown/benchmark_iphone5.png" alt="PinLayout Performance"/></a>
+-->  
 
 <br>
 
@@ -122,6 +126,19 @@ For any **comments**, **ideas**, **suggestions**, simply open an [issue](https:/
 If you'd like to contribute by adding other layout framework, you're welcome!
 
 <br>
+
+## Adding another layout framework
+
+The process is currently tedious...
+ 
+* Add an implementation of the reference view.
+* Run on all reference devices (or at least the two latest generation) in **Release mode**.
+* Select the new layout from the Benchmark App.
+* Update the XLSX document.
+* Add a new chart
+* Save the chart using "Save as Picture..."
+* Update the README.md
+* Create a pull request.
 
 ## License
 BSD 3-Clause License 
