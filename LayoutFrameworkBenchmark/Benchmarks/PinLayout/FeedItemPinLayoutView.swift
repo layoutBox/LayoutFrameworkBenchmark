@@ -177,6 +177,6 @@ class FeedItemPinLayoutView: UIView, DataBinder {
     }
     
     override var intrinsicContentSize: CGSize {
-        return sizeThatFits(CGSize(width: frame.width, height: CGFloat.greatestFiniteMagnitude))
+        return sizeThatFits(CGSize(width: frame.width, height: .greatestFiniteMagnitude))
     }
 }

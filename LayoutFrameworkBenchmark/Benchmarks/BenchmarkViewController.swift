@@ -14,7 +14,37 @@ class BenchmarkViewController: UITableViewController {
     private let reuseIdentifier = "cell"
 
     private let viewControllers: [ViewControllerData] = [
-        ViewControllerData(title: "UICollectionView UIStack feed", factoryBlock: { viewCount in
+        
+        //
+        // Ordered alphabetically
+        //
+        
+        ViewControllerData(title: "Auto Layout", factoryBlock: { viewCount in
+            let data = FeedItemData.generate(count: viewCount)
+            return CollectionViewControllerFeedItemAutoLayoutView(data: data)
+        }),
+        
+        ViewControllerData(title: "FlexLayout", factoryBlock: { viewCount in
+            let data = FeedItemData.generate(count: viewCount)
+            return CollectionViewControllerFeedItemFlexLayoutView(data: data)
+        }),
+        
+        ViewControllerData(title: "LayoutKit", factoryBlock: { viewCount in
+            let data = FeedItemData.generate(count: viewCount)
+            return CollectionViewControllerFeedItemLayoutKitView(data: data)
+        }),
+
+        ViewControllerData(title: "Manual Layout", factoryBlock: { viewCount in
+            let data = FeedItemData.generate(count: viewCount)
+            return CollectionViewControllerFeedItemManualView(data: data)
+        }),
+        
+        ViewControllerData(title: "PinLayout", factoryBlock: { viewCount in
+            let data = FeedItemData.generate(count: viewCount)
+            return CollectionViewControllerFeedItemPinLayoutView(data: data)
+        }),
+
+        ViewControllerData(title: "UIStackView", factoryBlock: { viewCount in
             if #available(iOS 9.0, *) {
                 let data = FeedItemData.generate(count: viewCount)
                 return CollectionViewControllerFeedItemUIStackView(data: data)
@@ -22,66 +52,6 @@ class BenchmarkViewController: UITableViewController {
                 NSLog("UIStackView only supported on iOS 9+")
                 return nil
             }
-        }),
-
-        ViewControllerData(title: "UICollectionView Auto Layout feed", factoryBlock: { viewCount in
-            let data = FeedItemData.generate(count: viewCount)
-            return CollectionViewControllerFeedItemAutoLayoutView(data: data)
-        }),
-
-        ViewControllerData(title: "UICollectionView LayoutKit feed", factoryBlock: { viewCount in
-            let data = FeedItemData.generate(count: viewCount)
-            return CollectionViewControllerFeedItemLayoutKitView(data: data)
-        }),
-
-        ViewControllerData(title: "UICollectionView Manual Layout feed", factoryBlock: { viewCount in
-            let data = FeedItemData.generate(count: viewCount)
-            return CollectionViewControllerFeedItemManualView(data: data)
-        }),
-        
-        ViewControllerData(title: "UICollectionView PinLayout Layout feed", factoryBlock: { viewCount in
-            let data = FeedItemData.generate(count: viewCount)
-            return CollectionViewControllerFeedItemPinLayoutView(data: data)
-        }),
-
-        ViewControllerData(title: "UICollectionView FlexLayout Layout feed", factoryBlock: { viewCount in
-            let data = FeedItemData.generate(count: viewCount)
-            return CollectionViewControllerFeedItemFlexLayoutView(data: data)
-        }),
-
-        ViewControllerData(title: "UITableView UIStack feed", factoryBlock: { viewCount in
-            if #available(iOS 9.0, *) {
-                let data = FeedItemData.generate(count: viewCount)
-                return TableViewControllerFeedItemUIStackView(data: data)
-            } else {
-                NSLog("UIStackView only supported on iOS 9+")
-                return nil
-            }
-        }),
-
-        ViewControllerData(title: "UITableView Auto Layout feed", factoryBlock: { viewCount in
-            let data = FeedItemData.generate(count: viewCount)
-            return TableViewControllerFeedItemAutoLayoutView(data: data)
-        }),
-
-        ViewControllerData(title: "UITableView LayoutKit feed", factoryBlock: { viewCount in
-            let data = FeedItemData.generate(count: viewCount)
-            return TableViewControllerFeedItemLayoutKitView(data: data)
-        }),
-
-        ViewControllerData(title: "UITableView Manual Layout feed", factoryBlock: { viewCount in
-            let data = FeedItemData.generate(count: viewCount)
-            return TableViewControllerFeedItemManualView(data: data)
-        }),
-        
-        ViewControllerData(title: "UITableView PinLayout Layout feed", factoryBlock: { viewCount in
-            let data = FeedItemData.generate(count: viewCount)
-            return TableViewControllerFeedItemPinLayoutView(data: data)
-        }),
-
-        ViewControllerData(title: "UITableView FlexLayout Layout feed", factoryBlock: { viewCount in
-            let data = FeedItemData.generate(count: viewCount)
-            return TableViewControllerFeedItemFlexLayoutView(data: data)
         })
     ]
 
@@ -118,7 +88,8 @@ class BenchmarkViewController: UITableViewController {
     }
 
     private func benchmark(_ viewControllerData: ViewControllerData) {
-        let iterations = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 100]
+        let iterations = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+        
         for i in iterations {
             let description = "\(i)\tsubviews\t\(viewControllerData.title)"
             Stopwatch.benchmark(description, block: { (stopwatch: Stopwatch) -> Void in

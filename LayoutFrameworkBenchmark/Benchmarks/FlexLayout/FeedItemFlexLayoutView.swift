@@ -140,15 +140,32 @@ class FeedItemFlexLayoutView: UIView, DataBinder {
 
     func setData(_ data: FeedItemData) {
         actionLabel.text = data.actionText
+        actionLabel.flex.markDirty()
 
         posterNameLabel.text = data.posterName
+        posterNameLabel.flex.markDirty()
+        
         posterHeadlineLabel.text = data.posterHeadline
+        posterHeadlineLabel.flex.markDirty()
+        
         posterTimeLabel.text = data.posterTimestamp
+        posterTimeLabel.flex.markDirty()
         
         posterCommentLabel.text = data.posterComment
+        posterCommentLabel.flex.markDirty()
+        
         contentTitleLabel.text = data.contentTitle
+        contentTitleLabel.flex.markDirty()
+        
         contentDomainLabel.text = data.contentDomain
+        contentDomainLabel.flex.markDirty()
+        
         actorCommentLabel.text = data.actorComment
+        actorCommentLabel.flex.markDirty()
+        
+        
+        // TODO: Redeo benchark!!!
+        
         setNeedsLayout()
     }
 
@@ -159,7 +176,7 @@ class FeedItemFlexLayoutView: UIView, DataBinder {
     }
 
     fileprivate func layoutFlexbox(size: CGSize) {
-        flex.width(size.width).height(size.height).layout()
+        flex.size(size).layout()
     }
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
@@ -169,6 +186,6 @@ class FeedItemFlexLayoutView: UIView, DataBinder {
     }
     
     override var intrinsicContentSize: CGSize {
-        return sizeThatFits(CGSize(width: frame.width, height: CGFloat.greatestFiniteMagnitude))
+        return sizeThatFits(CGSize(width: frame.width, height: .greatestFiniteMagnitude))
     }
 }
