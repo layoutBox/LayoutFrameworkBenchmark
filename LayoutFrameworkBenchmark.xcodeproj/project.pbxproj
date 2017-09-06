@@ -13,7 +13,6 @@
 		2401BC831F4F018C00788998 /* DataBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2401BC771F4F018C00788998 /* DataBinder.swift */; };
 		2401BC851F4F018C00788998 /* FeedItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2401BC791F4F018C00788998 /* FeedItemData.swift */; };
 		2401BC8B1F4F018C00788998 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2401BC7F1F4F018C00788998 /* Stopwatch.swift */; };
-		2401BC8C1F4F018C00788998 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2401BC801F4F018C00788998 /* TableViewController.swift */; };
 		2401BC8F1F4F01D600788998 /* FeedItemLayoutKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2401BC8E1F4F01D600788998 /* FeedItemLayoutKitView.swift */; };
 		2401BC941F4F021F00788998 /* FeedItemFlexLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2401BC931F4F021F00788998 /* FeedItemFlexLayoutView.swift */; };
 		2401BC961F4F022900788998 /* FeedItemPinLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2401BC951F4F022900788998 /* FeedItemPinLayoutView.swift */; };
@@ -34,7 +33,6 @@
 		2401BC771F4F018C00788998 /* DataBinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataBinder.swift; path = Benchmarks/DataBinder.swift; sourceTree = "<group>"; };
 		2401BC791F4F018C00788998 /* FeedItemData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedItemData.swift; path = Benchmarks/FeedItemData.swift; sourceTree = "<group>"; };
 		2401BC7F1F4F018C00788998 /* Stopwatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stopwatch.swift; path = Benchmarks/Stopwatch.swift; sourceTree = "<group>"; };
-		2401BC801F4F018C00788998 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = Benchmarks/TableViewController.swift; sourceTree = "<group>"; };
 		2401BC8E1F4F01D600788998 /* FeedItemLayoutKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedItemLayoutKitView.swift; path = Benchmarks/LayoutKit/FeedItemLayoutKitView.swift; sourceTree = "<group>"; };
 		2401BC931F4F021F00788998 /* FeedItemFlexLayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedItemFlexLayoutView.swift; path = Benchmarks/FlexLayout/FeedItemFlexLayoutView.swift; sourceTree = "<group>"; };
 		2401BC951F4F022900788998 /* FeedItemPinLayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedItemPinLayoutView.swift; path = Benchmarks/PinLayout/FeedItemPinLayoutView.swift; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 				2401BC771F4F018C00788998 /* DataBinder.swift */,
 				2401BC791F4F018C00788998 /* FeedItemData.swift */,
 				2401BC7F1F4F018C00788998 /* Stopwatch.swift */,
-				2401BC801F4F018C00788998 /* TableViewController.swift */,
 			);
 			name = Benchmarks;
 			sourceTree = "<group>";
@@ -327,7 +324,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2401BCA11F4F044000788998 /* FeedItemUIStackView.swift in Sources */,
-				2401BC8C1F4F018C00788998 /* TableViewController.swift in Sources */,
 				2401BC8B1F4F018C00788998 /* Stopwatch.swift in Sources */,
 				2401BC8F1F4F01D600788998 /* FeedItemLayoutKitView.swift in Sources */,
 				2401BC851F4F018C00788998 /* FeedItemData.swift in Sources */,
