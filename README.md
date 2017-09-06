@@ -93,22 +93,22 @@ You can see the benchmark's raw data in this [spreadsheet](docs_markdown/benchma
 The **X axis** in following charts indicates the **number of cells** contained for each pass. The **Y axis** indicates the **number of seconds** to render all cells from one pass.
 
 <p align="center">
-  <a href="docs_markdown/benchmark_iphone7.png"><img src="docs_markdown/benchmark_iphone7.png" alt="PinLayout Performance"/></a>
+  <a href="docs_markdown/benchmark_iphone7.png"><img src="docs_markdown/benchmark_iphone7.png"/></a>
 
 <p align="center">
-  <a href="docs_markdown/benchmark_iphone6s.png"><img src="docs_markdown/benchmark_iphone6s.png" alt="PinLayout Performance"/></a>
+  <a href="docs_markdown/benchmark_iphone6s.png"><img src="docs_markdown/benchmark_iphone6s.png"/></a>
 
 <p align="center">
-  <a href="docs_markdown/benchmark_iphone6.png"><img src="docs_markdown/benchmark_iphone6.png" alt="PinLayout Performance"/></a>
+  <a href="docs_markdown/benchmark_iphone6.png"><img src="docs_markdown/benchmark_iphone6.png"/></a>
 
 <p align="center">
-  <a href="docs_markdown/benchmark_iphone5.png"><img src="docs_markdown/benchmark_iphone5.png" alt="PinLayout Performance"/></a>
+  <a href="docs_markdown/benchmark_iphone5.png"><img src="docs_markdown/benchmark_iphone5.png"/></a>
 
 <br>
 
 ## Project's TODO list
 
-* Create a reference cell and update layout codes to match that reference.
+* Create a reference layout and update layout codes to match that reference.
 * Automate the benchmark to run all layout frameworks automatically.
 * Display benchmark charts inside the app and being to able to export them.
 * Export benchmark data to a spreadsheet.
