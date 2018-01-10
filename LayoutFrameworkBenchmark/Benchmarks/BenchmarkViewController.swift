@@ -66,39 +66,92 @@ class BenchmarkViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewControllers.count
+        return viewControllers.count + 1
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-        cell.textLabel?.text = viewControllers[indexPath.row].title
-        return cell
+        if indexPath.row == 0 {
+            let cell = UITableViewCell()
+            cell.textLabel?.text = "Run all benchmarks"
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+            cell.textLabel?.text = viewControllers[indexPath.row - 1].title
+            return cell
+        }
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewControllerData = viewControllers[indexPath.row]
+        print("\nseconds/ops for each iterations (10, 20, ..., 100)")
+        print("-------------------------------------")
+
+        if indexPath.row == 0 {
+            runAllBenchmarks()
+        } else {
+            let viewControllerData = viewControllers[indexPath.row - 1]
+            runBenchmark(viewControllerData: viewControllerData, logResults: true, completed: { (results) in
+                self.printResults(name: viewControllerData.title, results: results)
+            })
+        }
+    }
+
+    private func runAllBenchmarks() {
+        var benchmarkIndex = 0
+
+        func benchmarkCompleted(_ results: [Result]) {
+            printResults(name: viewControllers[benchmarkIndex].title, results: results)
+
+            Timer.scheduledTimer(withTimeInterval: 0, repeats: false, block: { (_) in
+                self.navigationController?.popViewController(animated: false)
+
+                benchmarkIndex += 1
+                if benchmarkIndex < self.viewControllers.count {
+                    self.runBenchmark(viewControllerData: self.viewControllers[benchmarkIndex], logResults: false, completed: benchmarkCompleted)
+                } else {
+                    print("Completed!")
+                }
+            })
+        }
+
+        runBenchmark(viewControllerData: viewControllers[benchmarkIndex], logResults: false, completed: benchmarkCompleted)
+    }
+
+    private func printResults(name: String, results: [Result]) {
+        var resultsString = "\(name)\t"
+        results.forEach { (result) in
+            resultsString += "\(result.secondsPerOperation)\t"
+        }
+        print(resultsString)
+    }
+
+    private func runBenchmark(viewControllerData: ViewControllerData, logResults: Bool, completed: ((_ results: [Result]) -> Void)?) {
         guard let viewController = viewControllerData.factoryBlock(20) else {
             return
         }
 
-        benchmark(viewControllerData)
+        benchmark(viewControllerData, logResults: logResults, completed: completed)
 
         viewController.title = viewControllerData.title
-        navigationController?.pushViewController(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: logResults)
     }
 
-    private func benchmark(_ viewControllerData: ViewControllerData) {
+    private func benchmark(_ viewControllerData: ViewControllerData, logResults: Bool, completed: ((_ results: [Result]) -> Void)?) {
         let iterations = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+        var results: [Result] = []
         
         for i in iterations {
             let description = "\(i)\tsubviews\t\(viewControllerData.title)"
-            Stopwatch.benchmark(description, block: { (stopwatch: Stopwatch) -> Void in
+            let result = Stopwatch.benchmark(description, logResults: logResults, block: { (stopwatch: Stopwatch) -> Void in
                 let vc = viewControllerData.factoryBlock(i)
                 stopwatch.resume()
                 vc?.view.layoutIfNeeded()
                 stopwatch.pause()
             })
+
+            results.append(result)
         }
+
+        completed?(results)
     }
 }
 

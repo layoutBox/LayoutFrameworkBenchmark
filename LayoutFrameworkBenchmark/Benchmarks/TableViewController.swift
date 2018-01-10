@@ -44,13 +44,19 @@ class TableViewController<ContentViewType: UIView>: UITableViewController where 
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return data.count + 1
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: CellType = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! CellType
-        cell.setData(data[indexPath.row])
-        return cell
+        if indexPath.row == 0 {
+            let cell = UITableViewCell()
+            cell.textLabel?.text = "Run all benchmarks"
+            return cell
+        } else {
+            let cell: CellType = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! CellType
+            cell.setData(data[indexPath.row])
+            return cell
+        }
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

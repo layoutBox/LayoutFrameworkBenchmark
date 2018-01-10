@@ -152,15 +152,15 @@ class FeedItemPinLayoutView: UIView, DataBinder {
         
         posterImageView.pin.below(of: actionLabel, aligned: .left).marginTop(10)
         
-        posterNameLabel.pin.right(of: posterImageView, aligned: .top).margin(-6, 6).right(hMargin).sizeToFit()
-        posterHeadlineLabel.pin.below(of: posterNameLabel, aligned: .left).right(hMargin).marginTop(1).sizeToFit()
-        posterTimeLabel.pin.below(of: posterHeadlineLabel, aligned: .left).right(hMargin).marginTop(1).sizeToFit()
+        posterNameLabel.pin.right(of: posterImageView, aligned: .top).margin(-6, 6).right(hMargin).sizeToFit(.width)
+        posterHeadlineLabel.pin.below(of: posterNameLabel, aligned: .left).right(hMargin).marginTop(1).sizeToFit(.width)
+        posterTimeLabel.pin.below(of: posterHeadlineLabel, aligned: .left).right(hMargin).marginTop(1).sizeToFit(.width)
         
-        posterCommentLabel.pin.below(of: posterTimeLabel).left(hMargin).right().right(hMargin).marginTop(vMargin).sizeToFit()
+        posterCommentLabel.pin.below(of: posterTimeLabel).left(hMargin).right(hMargin).marginTop(vMargin).sizeToFit(.width)
         
         contentImageView.pin.below(of: posterCommentLabel, aligned: .left).right().marginRight(hMargin)
-        contentTitleLabel.pin.below(of: contentImageView).left().right().marginHorizontal(hMargin).sizeToFit()
-        contentDomainLabel.pin.below(of: contentTitleLabel, aligned: .left).right().marginRight(hMargin).sizeToFit()
+        contentTitleLabel.pin.below(of: contentImageView).left().right().marginHorizontal(hMargin).sizeToFit(.width)
+        contentDomainLabel.pin.below(of: contentTitleLabel, aligned: .left).right().marginRight(hMargin).sizeToFit(.width)
         
         likeLabel.pin.below(of: contentDomainLabel, aligned: .left).marginTop(vMargin)
         commentLabel.pin.top(to: likeLabel.edge.top).hCenter(50%)
