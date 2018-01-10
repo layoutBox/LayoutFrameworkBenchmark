@@ -12,5 +12,7 @@ target 'LayoutFrameworkBenchmark' do
     pod 'FlexLayout'
 	pod 'LayoutKit'
     pod 'PinLayout'
+    pod 'StackViewLayout'
+    #pod 'StackViewLayout', :path => '../StackLayout'
     pod 'Reveal-SDK'
 end

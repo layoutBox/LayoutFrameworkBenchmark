@@ -24,6 +24,7 @@
 		24661D001F4EFFF5002CB883 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24661CFF1F4EFFF5002CB883 /* AppDelegate.swift */; };
 		24661D071F4EFFF5002CB883 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24661D061F4EFFF5002CB883 /* Assets.xcassets */; };
 		24661D0A1F4EFFF5002CB883 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24661D081F4EFFF5002CB883 /* LaunchScreen.storyboard */; };
+		DF0615A0200685930064DC23 /* FeedItemStackViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF06159F200685930064DC23 /* FeedItemStackViewLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		24661D0B1F4EFFF5002CB883 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F34489CA12B845548D7F17E /* Pods_LayoutFrameworkBenchmark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LayoutFrameworkBenchmark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73BD901DE3512A23A7603899 /* Pods-LayoutFrameworkBenchmark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LayoutFrameworkBenchmark.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LayoutFrameworkBenchmark/Pods-LayoutFrameworkBenchmark.debug.xcconfig"; sourceTree = "<group>"; };
+		DF06159F200685930064DC23 /* FeedItemStackViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItemStackViewLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,11 +68,12 @@
 			isa = PBXGroup;
 			children = (
 				2401BCA21F4F045600788998 /* AutoLayout */,
-				2401BC9F1F4F043800788998 /* UIStackView */,
-				2401BC9C1F4F041400788998 /* ManualLayout */,
 				2401BC921F4F020D00788998 /* FlexLayout */,
 				2401BC8D1F4F01CC00788998 /* LayoutKit */,
+				2401BC9C1F4F041400788998 /* ManualLayout */,
 				2401BC911F4F020600788998 /* PinLayout */,
+				DF06159E200685930064DC23 /* StackViewLayout */,
+				2401BC9F1F4F043800788998 /* UIStackView */,
 				2401BC751F4F018C00788998 /* BenchmarkViewController.swift */,
 				2401BC761F4F018C00788998 /* CollectionViewController.swift */,
 				2401BC771F4F018C00788998 /* DataBinder.swift */,
@@ -185,6 +188,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DF06159E200685930064DC23 /* StackViewLayout */ = {
+			isa = PBXGroup;
+			children = (
+				DF06159F200685930064DC23 /* FeedItemStackViewLayout.swift */,
+			);
+			name = StackViewLayout;
+			path = Benchmarks/StackViewLayout;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -281,8 +293,8 @@
 				"${BUILT_PRODUCTS_DIR}/LayoutKit/LayoutKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PinLayout/PinLayout.framework",
 				"${PODS_ROOT}/Reveal-SDK/RevealServer-10/iOS/RevealServer.framework",
+				"${BUILT_PRODUCTS_DIR}/StackViewLayout/StackViewLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework",
-				"${BUILT_PRODUCTS_DIR}/YogaKit/YogaKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -290,8 +302,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LayoutKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StackViewLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/yoga.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YogaKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -313,7 +325,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -323,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF0615A0200685930064DC23 /* FeedItemStackViewLayout.swift in Sources */,
 				2401BCA11F4F044000788998 /* FeedItemUIStackView.swift in Sources */,
 				2401BC8B1F4F018C00788998 /* Stopwatch.swift in Sources */,
 				2401BC8F1F4F01D600788998 /* FeedItemLayoutKitView.swift in Sources */,

@@ -44,6 +44,11 @@ class BenchmarkViewController: UITableViewController {
             return CollectionViewControllerFeedItemPinLayoutView(data: data)
         }),
 
+        ViewControllerData(title: "StackViewLayout", factoryBlock: { viewCount in
+            let data = FeedItemData.generate(count: viewCount)
+            return CollectionViewControllerFeedItemStackViewLayoutView(data: data)
+        }),
+
         ViewControllerData(title: "UIStackView", factoryBlock: { viewCount in
             if #available(iOS 9.0, *) {
                 let data = FeedItemData.generate(count: viewCount)
@@ -136,6 +141,7 @@ class BenchmarkViewController: UITableViewController {
     }
 
     private func benchmark(_ viewControllerData: ViewControllerData, logResults: Bool, completed: ((_ results: [Result]) -> Void)?) {
+        //let iterations = [1]
         let iterations = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
         var results: [Result] = []
         

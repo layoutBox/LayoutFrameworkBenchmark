@@ -6,12 +6,12 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import UIKit
-import FlexLayout
+import StackViewLayout
 
-/// A LinkedIn feed item that is implemented with FlexLayout code.
-class FeedItemFlexLayoutView: UIView, DataBinder {
+/// A LinkedIn feed item that is implemented with StackViewLayout code.
+class FeedItemStackViewLayoutView: UIView, DataBinder {
 
-    let contentView = UIView()
+    let stackView = StackView()
 
     let actionLabel: UILabel = {
         let l = UILabel()
@@ -50,7 +50,7 @@ class FeedItemFlexLayoutView: UIView, DataBinder {
         l.backgroundColor = UIColor.yellow
         return l
     }()
-    
+
     let posterCommentLabel: UILabel = UILabel()
 
     let contentImageView: UIImageView = {
@@ -98,39 +98,56 @@ class FeedItemFlexLayoutView: UIView, DataBinder {
         super.init(frame: frame)
         backgroundColor = .white
 
-        flex.addItem(contentView).padding(8).define { (flex) in
-            flex.addItem().direction(.row).justifyContent(.spaceBetween).define { (flex) in
-                flex.addItem(actionLabel)
-                flex.addItem(optionsLabel)
+        let padding: CGFloat = 8
+
+
+        // TODO: Need padding and aspectRatio!!!!
+
+        stackView.define { (stackView) in
+            let stackViewRow = StackView()
+            stackViewRow.direction(.row).justifyContent(.spaceBetween).define { (stackView) in
+                stackView.addItem(actionLabel)
+                stackView.addItem(optionsLabel)
             }
-            
-            flex.addItem().direction(.row).alignItems(.center).define({ (flex) in
-                flex.addItem(posterImageView).width(50).height(50).marginRight(8)
+            stackView.addItem(stackViewRow).margin(padding)
 
-                flex.addItem().grow(1).define({ (flex) in
-                    flex.addItem(posterNameLabel)
-                    flex.addItem(posterHeadlineLabel)
-                    flex.addItem(posterTimeLabel)
+            let stackViewPosterInfo = StackView()
+            stackViewPosterInfo.direction(.row).alignItems(.center).define({ (stackView) in
+                stackView.addItem(posterImageView).width(50).height(50)
+
+                let stackViewPosterDetail = StackView()
+                stackViewPosterDetail.define({ (stackView) in
+                    stackView.addItem(posterNameLabel)
+                    stackView.addItem(posterHeadlineLabel)
+                    stackView.addItem(posterTimeLabel)
                 })
+                stackView.addItem(stackViewPosterDetail).grow(1).shrink(1)
             })
+            stackView.addItem(stackViewPosterInfo).margin(padding)
 
-            flex.addItem(posterCommentLabel)
+            stackView.addItem(posterCommentLabel).margin(padding)
 
-            flex.addItem(contentImageView).aspectRatio(350 / 200)
-            flex.addItem(contentTitleLabel)
-            flex.addItem(contentDomainLabel)
+            stackView.addItem(contentImageView).margin(padding)//.aspectRatio(350 / 200)
+            stackView.addItem(contentTitleLabel).margin(padding)
+            stackView.addItem(contentDomainLabel).margin(padding)
 
-            flex.addItem().direction(.row).justifyContent(.spaceBetween).marginTop(4).define({ (flex) in
-                flex.addItem(likeLabel)
-                flex.addItem(commentLabel)
-                flex.addItem(shareLabel)
+            let stackViewSocial = StackView()
+            stackViewSocial.direction(.row).justifyContent(.spaceBetween).define({ (stackView) in
+                stackView.addItem(likeLabel)
+                stackView.addItem(commentLabel)
+                stackView.addItem(shareLabel)
             })
+            stackView.addItem(stackViewSocial).marginTop(4).marginHorizontal(padding)
 
-            flex.addItem().direction(.row).marginTop(2).define({ (flex) in
-                flex.addItem(actorImageView).width(50).height(50).marginRight(8)
-                flex.addItem(actorCommentLabel).grow(1)
+            let stackViewActor = StackView()
+            stackViewActor.direction(.row).define({ (stackView) in
+                stackView.addItem(actorImageView).width(50).height(50).marginRight(8)
+                stackView.addItem(actorCommentLabel).grow(1)
             })
+            stackView.addItem(stackViewActor).marginTop(2).marginHorizontal(padding).marginBottom(padding)
         }
+
+        addSubview(stackView)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -143,28 +160,28 @@ class FeedItemFlexLayoutView: UIView, DataBinder {
 
         posterNameLabel.text = data.posterName
         posterNameLabel.flex.markDirty()
-        
+
         posterHeadlineLabel.text = data.posterHeadline
         posterHeadlineLabel.flex.markDirty()
-        
+
         posterTimeLabel.text = data.posterTimestamp
         posterTimeLabel.flex.markDirty()
-        
+
         posterCommentLabel.text = data.posterComment
         posterCommentLabel.flex.markDirty()
-        
+
         contentTitleLabel.text = data.contentTitle
         contentTitleLabel.flex.markDirty()
-        
+
         contentDomainLabel.text = data.contentDomain
         contentDomainLabel.flex.markDirty()
-        
+
         actorCommentLabel.text = data.actorComment
         actorCommentLabel.flex.markDirty()
-        
-        
+
+
         // TODO: Redeo benchark!!!
-        
+
         setNeedsLayout()
     }
 
@@ -175,15 +192,13 @@ class FeedItemFlexLayoutView: UIView, DataBinder {
     }
 
     fileprivate func layout(size: CGSize) {
-        flex.size(size).layout()
+        stackView.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
     }
-    
+
     override func sizeThatFits(_ size: CGSize) -> CGSize {
-        layout(size: CGSize(width: size.width != .greatestFiniteMagnitude ? size.width : 10000,
-                                   height: size.height != .greatestFiniteMagnitude ? size.height : 10000))
-        return CGSize(width: size.width, height: contentView.frame.height + 4)
+        return stackView.sizeThatFits(size)
     }
-    
+
     override var intrinsicContentSize: CGSize {
         return sizeThatFits(CGSize(width: frame.width, height: .greatestFiniteMagnitude))
     }
