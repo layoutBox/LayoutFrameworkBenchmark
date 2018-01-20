@@ -100,51 +100,42 @@ class FeedItemStackViewLayoutView: UIView, DataBinder {
 
         let padding: CGFloat = 8
 
-
-        // TODO: Need padding and aspectRatio!!!!
+        // TODO: Need padding
 
         stackView.define { (stackView) in
             let stackViewRow = StackView()
-            stackViewRow.direction(.row).justifyContent(.spaceBetween).define { (stackView) in
+
+            stackView.addStackView().direction(.row).justifyContent(.spaceBetween).define { (stackView) in
                 stackView.addItem(actionLabel)
                 stackView.addItem(optionsLabel)
             }
             stackView.addItem(stackViewRow).margin(padding)
 
-            let stackViewPosterInfo = StackView()
-            stackViewPosterInfo.direction(.row).alignItems(.center).define({ (stackView) in
+            stackView.addStackView().direction(.row).alignItems(.center).define({ (stackView) in
                 stackView.addItem(posterImageView).width(50).height(50)
 
-                let stackViewPosterDetail = StackView()
-                stackViewPosterDetail.define({ (stackView) in
+                stackView.addStackView().define({ (stackView) in
                     stackView.addItem(posterNameLabel)
                     stackView.addItem(posterHeadlineLabel)
                     stackView.addItem(posterTimeLabel)
-                })
-                stackView.addItem(stackViewPosterDetail).grow(1).shrink(1)
-            })
-            stackView.addItem(stackViewPosterInfo).margin(padding)
+                }).item.grow(1).shrink(1)
+            }).item.margin(padding)
 
             stackView.addItem(posterCommentLabel).margin(padding)
-
-            stackView.addItem(contentImageView).margin(padding)//.aspectRatio(350 / 200)
+            stackView.addItem(contentImageView).margin(padding).aspectRatio(350 / 200)
             stackView.addItem(contentTitleLabel).margin(padding)
             stackView.addItem(contentDomainLabel).margin(padding)
 
-            let stackViewSocial = StackView()
-            stackViewSocial.direction(.row).justifyContent(.spaceBetween).define({ (stackView) in
+            stackView.addStackView().direction(.row).justifyContent(.spaceBetween).define({ (stackView) in
                 stackView.addItem(likeLabel)
                 stackView.addItem(commentLabel)
                 stackView.addItem(shareLabel)
-            })
-            stackView.addItem(stackViewSocial).marginTop(4).marginHorizontal(padding)
+            }).item.marginTop(4).marginHorizontal(padding)
 
-            let stackViewActor = StackView()
-            stackViewActor.direction(.row).define({ (stackView) in
+            stackView.addStackView().direction(.row).define({ (stackView) in
                 stackView.addItem(actorImageView).width(50).height(50).marginRight(8)
                 stackView.addItem(actorCommentLabel).grow(1)
-            })
-            stackView.addItem(stackViewActor).marginTop(2).marginHorizontal(padding).marginBottom(padding)
+            }).item.marginTop(2).marginHorizontal(padding).marginBottom(padding)
         }
 
         addSubview(stackView)
@@ -179,8 +170,7 @@ class FeedItemStackViewLayoutView: UIView, DataBinder {
         actorCommentLabel.text = data.actorComment
         actorCommentLabel.flex.markDirty()
 
-
-        // TODO: Redeo benchark!!!
+        // TODO: Redo benchmark!!!
 
         setNeedsLayout()
     }
