@@ -1,6 +1,6 @@
 PODS:
   - FlexLayout (1.3.5)
-  - LayoutKit (5.0.0)
+  - LayoutKit (7.0.2)
   - PinLayout (1.5.9)
   - Reveal-SDK (13)
   - StackViewLayout (0.1.6)
@@ -26,11 +26,11 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   FlexLayout: 8cfa915850eab120c3d89c3b8b02e3aca96de554
-  LayoutKit: 09e015b77fe5cd58696c427d496704b9226876cf
+  LayoutKit: 183c513f8322f4e22321499e54163864bcdf7d97
   PinLayout: b2ebf8622b28e82b6e1216ab4e4a0a8d082214fe
   Reveal-SDK: ccc2b0f8014965ea448b7534a7c2c8da232b75e8
-  StackViewLayout: e42a641399ded6fe2c459b45cce6b0233a66467e
+  StackViewLayout: 79d804472afc8bfe5fc385e892d978fc9e68e7b1
 
 PODFILE CHECKSUM: 78ce71bbaf2ad9cf74630adeda65cdaa345d4ae7
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.4.0
