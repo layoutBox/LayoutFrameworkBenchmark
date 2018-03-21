@@ -24,7 +24,6 @@
 		24661D001F4EFFF5002CB883 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24661CFF1F4EFFF5002CB883 /* AppDelegate.swift */; };
 		24661D071F4EFFF5002CB883 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24661D061F4EFFF5002CB883 /* Assets.xcassets */; };
 		24661D0A1F4EFFF5002CB883 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24661D081F4EFFF5002CB883 /* LaunchScreen.storyboard */; };
-		DF0615A0200685930064DC23 /* FeedItemStackViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF06159F200685930064DC23 /* FeedItemStackViewLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +48,6 @@
 		24661D0B1F4EFFF5002CB883 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F34489CA12B845548D7F17E /* Pods_LayoutFrameworkBenchmark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LayoutFrameworkBenchmark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73BD901DE3512A23A7603899 /* Pods-LayoutFrameworkBenchmark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LayoutFrameworkBenchmark.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LayoutFrameworkBenchmark/Pods-LayoutFrameworkBenchmark.debug.xcconfig"; sourceTree = "<group>"; };
-		DF06159F200685930064DC23 /* FeedItemStackViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItemStackViewLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +70,6 @@
 				2401BC8D1F4F01CC00788998 /* LayoutKit */,
 				2401BC9C1F4F041400788998 /* ManualLayout */,
 				2401BC911F4F020600788998 /* PinLayout */,
-				DF06159E200685930064DC23 /* StackViewLayout */,
 				2401BC9F1F4F043800788998 /* UIStackView */,
 				2401BC751F4F018C00788998 /* BenchmarkViewController.swift */,
 				2401BC761F4F018C00788998 /* CollectionViewController.swift */,
@@ -186,15 +183,6 @@
 				4F34489CA12B845548D7F17E /* Pods_LayoutFrameworkBenchmark.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DF06159E200685930064DC23 /* StackViewLayout */ = {
-			isa = PBXGroup;
-			children = (
-				DF06159F200685930064DC23 /* FeedItemStackViewLayout.swift */,
-			);
-			name = StackViewLayout;
-			path = Benchmarks/StackViewLayout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,7 +322,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF0615A0200685930064DC23 /* FeedItemStackViewLayout.swift in Sources */,
 				2401BCA11F4F044000788998 /* FeedItemUIStackView.swift in Sources */,
 				2401BC8B1F4F018C00788998 /* Stopwatch.swift in Sources */,
 				2401BC8F1F4F01D600788998 /* FeedItemLayoutKitView.swift in Sources */,
