@@ -67,7 +67,7 @@ Yoga's performance hasn't been tested directly, but FlexLayout has. FlexLayout i
 <br>
 
 ## Benchmark details
-The benchmark layout UICollectionView and UITableView cells in multiple pass, each pass contains more cells than the previous one. 
+The benchmark layout UICollectionView cells in multiple pass, each pass contains more cells than the previous one. 
 
 ## Benchmark cell's layout
 Here are the benchmark rendering results to compare visual results:
@@ -84,32 +84,46 @@ Here are the benchmark rendering results to compare visual results:
 # Results <a name="results"></a>
 
 ## Benchmark data  
-You can see the benchmark's raw data in this [spreadsheet](docs_markdown/benchmark.xlsx).
+You can see the benchmark's data and charts in this **[Google Spreadsheet Document](https://docs.google.com/spreadsheets/d/1sUNdGWBM-d_W13yC7VcfkRXC3owCVsnIublnfW-4xn4/edit#gid=1032991425)**.
 
 <br>
 
 ## Benchmark charts  
 
+
+##### General comparison
+
+This chart display a general comparison between device performance using each layout framework.
+It display the performance when layouting UICollectionView cells.
+
+The **Y axis** indicates the **number of seconds** to render all cells.
+
+<a href="docs_markdown/benchmark_comparison.png"><img src="docs_markdown/benchmark_comparison.png"/></a>
+<br>
+
+##### Details for different devices
+
 The **X axis** in following charts indicates the **number of cells** contained for each pass. The **Y axis** indicates the **number of seconds** to render all cells from one pass.
 
-<p align="center">
-  <a href="docs_markdown/benchmark_iphone7.png"><img src="docs_markdown/benchmark_iphone7.png"/></a>
-
-<p align="center">
-  <a href="docs_markdown/benchmark_iphone6s.png"><img src="docs_markdown/benchmark_iphone6s.png"/></a>
-
-<p align="center">
-  <a href="docs_markdown/benchmark_iphone6.png"><img src="docs_markdown/benchmark_iphone6.png"/></a>
-
-<p align="center">
-  <a href="docs_markdown/benchmark_iphone5.png"><img src="docs_markdown/benchmark_iphone5.png"/></a>
-
+<a href="docs_markdown/benchmark_iphonex.png"><img src="docs_markdown/benchmark_iphonex.png"/></a>
 <br>
+
+<a href="docs_markdown/benchmark_iphone8.png"><img src="docs_markdown/benchmark_iphone8.png"/></a>
+<br>
+
+<a href="docs_markdown/benchmark_iphone7.png"><img src="docs_markdown/benchmark_iphone7.png"/></a>
+<br>
+
+<a href="docs_markdown/benchmark_iphone6.png"><img src="docs_markdown/benchmark_iphone6.png"/></a>
+<br>
+
+<a href="docs_markdown/benchmark_iphone5.png"><img src="docs_markdown/benchmark_iphone5.png"/></a>
+<br>
+
 
 ## Project's TODO list
 
 * Create a reference layout and update layout codes to match that reference.
-* Automate the benchmark to run all layout frameworks automatically.
 * Display benchmark charts inside the app and being to able to export them.
 * Export benchmark data to a spreadsheet.
 * Add more layout frameworks.
