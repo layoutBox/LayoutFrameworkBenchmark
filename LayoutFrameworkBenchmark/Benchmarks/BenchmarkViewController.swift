@@ -24,12 +24,12 @@ class BenchmarkViewController: UITableViewController {
             return CollectionViewControllerFeedItemAutoLayoutView(data: data)
         }),
         
-        ViewControllerData(title: "FlexLayout", factoryBlock: { viewCount in
+        ViewControllerData(title: "FlexLayout 1.3", factoryBlock: { viewCount in
             let data = FeedItemData.generate(count: viewCount)
             return CollectionViewControllerFeedItemFlexLayoutView(data: data)
         }),
         
-        ViewControllerData(title: "LayoutKit", factoryBlock: { viewCount in
+        ViewControllerData(title: "LayoutKit 7.0", factoryBlock: { viewCount in
             let data = FeedItemData.generate(count: viewCount)
             return CollectionViewControllerFeedItemLayoutKitView(data: data)
         }),
@@ -39,7 +39,7 @@ class BenchmarkViewController: UITableViewController {
             return CollectionViewControllerFeedItemManualView(data: data)
         }),
         
-        ViewControllerData(title: "PinLayout", factoryBlock: { viewCount in
+        ViewControllerData(title: "PinLayout 1.5", factoryBlock: { viewCount in
             let data = FeedItemData.generate(count: viewCount)
             return CollectionViewControllerFeedItemPinLayoutView(data: data)
         }),
@@ -101,7 +101,7 @@ class BenchmarkViewController: UITableViewController {
         func benchmarkCompleted(_ results: [Result]) {
             printResults(name: viewControllers[benchmarkIndex].title, results: results)
 
-            Timer.scheduledTimer(withTimeInterval: 0, repeats: false, block: { (_) in
+            DispatchQueue.main.async {
                 self.navigationController?.popViewController(animated: false)
 
                 benchmarkIndex += 1
@@ -110,7 +110,7 @@ class BenchmarkViewController: UITableViewController {
                 } else {
                     print("Completed!")
                 }
-            })
+            }
         }
 
         runBenchmark(viewControllerData: viewControllers[benchmarkIndex], logResults: false, completed: benchmarkCompleted)
@@ -136,9 +136,10 @@ class BenchmarkViewController: UITableViewController {
     }
 
     private func benchmark(_ viewControllerData: ViewControllerData, logResults: Bool, completed: ((_ results: [Result]) -> Void)?) {
+//        let iterations = [1]
         let iterations = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
         var results: [Result] = []
-        
+
         for i in iterations {
             let description = "\(i)\tsubviews\t\(viewControllerData.title)"
             let result = Stopwatch.benchmark(description, logResults: logResults, block: { (stopwatch: Stopwatch) -> Void in

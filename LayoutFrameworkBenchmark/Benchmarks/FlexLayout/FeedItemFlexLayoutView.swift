@@ -6,10 +6,9 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import UIKit
-import PinLayout
 import FlexLayout
 
-/// A LinkedIn feed item that is implemented with PinLayout code.
+/// A LinkedIn feed item that is implemented with FlexLayout code.
 class FeedItemFlexLayoutView: UIView, DataBinder {
 
     let contentView = UIView()
@@ -172,15 +171,15 @@ class FeedItemFlexLayoutView: UIView, DataBinder {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        layoutFlexbox(size: bounds.size)
+        layout(size: bounds.size)
     }
 
-    fileprivate func layoutFlexbox(size: CGSize) {
+    fileprivate func layout(size: CGSize) {
         flex.size(size).layout()
     }
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
-        layoutFlexbox(size: CGSize(width: size.width != .greatestFiniteMagnitude ? size.width : 10000,
+        layout(size: CGSize(width: size.width != .greatestFiniteMagnitude ? size.width : 10000,
                                    height: size.height != .greatestFiniteMagnitude ? size.height : 10000))
         return CGSize(width: size.width, height: contentView.frame.height + 4)
     }

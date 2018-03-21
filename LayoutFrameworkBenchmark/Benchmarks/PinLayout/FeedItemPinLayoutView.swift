@@ -163,7 +163,7 @@ class FeedItemPinLayoutView: UIView, DataBinder {
         contentDomainLabel.pin.below(of: contentTitleLabel, aligned: .left).right().marginRight(hMargin).sizeToFit(.width)
         
         likeLabel.pin.below(of: contentDomainLabel, aligned: .left).marginTop(vMargin)
-        commentLabel.pin.top(to: likeLabel.edge.top).hCenter(50%)
+        commentLabel.pin.top(to: likeLabel.edge.top).hCenter()
         shareLabel.pin.top(to: likeLabel.edge.top).right().marginRight(hMargin)
         
         actorImageView.pin.below(of: likeLabel, aligned: .left).marginTop(vMargin)
