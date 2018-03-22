@@ -4,7 +4,7 @@
 
 <h1 align="center" style="color: #376C9D; font-family: Arial Black, Gadget, sans-serif; font-size: 2em">Layout Framework Benchmark</h1>
  
-<p align="center">
+<p align="center">w
   <a href=""><img src="https://img.shields.io/cocoapods/p/FlexLayout.svg?style=flat" /></a>
   <a href="https://travis-ci.org/lucdion/LayoutFrameworkBenchmark"><img src="https://travis-ci.org/lucdion/LayoutFrameworkBenchmark.svg?branch=master" /></a>
   <a href="https://raw.githubusercontent.com/lucdion/LayoutFrameworkBenchmark/master/LICENSE"><img src="https://img.shields.io/badge/license-New%20BSD-blue.svg?style=flat" /></a>
@@ -47,7 +47,7 @@ LayoutKit is a fast view layout library for iOS, macOS, and tvOS.
 [LayoutKit benchmark's source code](https://github.com/lucdion/LayoutFrameworkBenchmark/tree/master/LayoutFrameworkBenchmark/Benchmarks/LayoutKit)
 
 * **Manual layout**  
-Layout is done by setting UIView's frame property directly.  
+Layout is done by setting UIView's frame property directly. This implementation comes directly from the LayoutKit benchmark.
 [Manual layout benchmark's source code](https://github.com/lucdion/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/Benchmarks/ManualLayout/FeedItemManualView.swift)
 
 * [**PinLayout**](https://github.com/mirego/PinLayout)  
@@ -94,11 +94,11 @@ You can see the benchmark's data and charts in this **[Google Spreadsheet Docume
 ##### General comparison
 
 This chart display a general comparison between device performance using each layout framework.
-It display the performance when layouting UICollectionView cells.
+It displays the performance when layouting UICollectionView cells. This graph shows performance when layouting 100 UICollectionView cells.
 
 The **Y axis** indicates the **number of seconds** to render all cells.
 
-<a href="docs_markdown/benchmark_comparison.png"><img src="docs_markdown/benchmark_comparison.png"/></a>
+<a href="docs_markdown/benchmark_comparison_all.png"><img src="docs_markdown/benchmark_comparison_all.png"/></a>
 <br>
 
 ##### Details for different devices
@@ -114,10 +114,13 @@ The **X axis** in following charts indicates the **number of cells** contained f
 <a href="docs_markdown/benchmark_iphone7.png"><img src="docs_markdown/benchmark_iphone7.png"/></a>
 <br>
 
+<a href="docs_markdown/benchmark_iphone6s.png"><img src="docs_markdown/benchmark_iphone6s.png"/></a>
+<br>
+
 <a href="docs_markdown/benchmark_iphone6.png"><img src="docs_markdown/benchmark_iphone6.png"/></a>
 <br>
 
-<a href="docs_markdown/benchmark_iphone5.png"><img src="docs_markdown/benchmark_iphone5.png"/></a>
+<a href="docs_markdown/benchmark_iphone5s.png"><img src="docs_markdown/benchmark_iphone5s.png"/></a>
 <br>
 
 
