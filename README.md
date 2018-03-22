@@ -139,7 +139,7 @@ The **X axis** in following charts indicates the **number of cells** contained f
 ## Contributing, comments, ideas, suggestions, issues, .... <a name="comments"></a>
 For any **comments**, **ideas**, **suggestions**, simply open an [issue](https://github.com/lucdion/LayoutFrameworkBenchmark/issues). 
 
-If you'd like to contribute by adding other layout framework, you're welcome!
+If you'd like to contribute by adding other layout framework, you're welcomed!
 
 <br>
 
