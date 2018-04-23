@@ -197,7 +197,7 @@
 				24661CF91F4EFFF5002CB883 /* Frameworks */,
 				24661CFA1F4EFFF5002CB883 /* Resources */,
 				84A6AA5174E802B10D43854E /* [CP] Embed Pods Frameworks */,
-				4C7BAC685B12080739E96688 /* [CP] Copy Pods Resources */,
+				B8AEA99D8FF290D7C77FC40D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,7 +256,31 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4C7BAC685B12080739E96688 /* [CP] Copy Pods Resources */ = {
+		84A6AA5174E802B10D43854E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LayoutFrameworkBenchmark/Pods-LayoutFrameworkBenchmark-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FlexLayout/FlexLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/LayoutKit/LayoutKit.framework",
+				"${BUILT_PRODUCTS_DIR}/PinLayout/PinLayout.framework",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-14/iOS/RevealServer.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlexLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LayoutKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LayoutFrameworkBenchmark/Pods-LayoutFrameworkBenchmark-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8AEA99D8FF290D7C77FC40D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -269,30 +293,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LayoutFrameworkBenchmark/Pods-LayoutFrameworkBenchmark-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		84A6AA5174E802B10D43854E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-LayoutFrameworkBenchmark/Pods-LayoutFrameworkBenchmark-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FlexLayout/FlexLayout.framework",
-				"${BUILT_PRODUCTS_DIR}/LayoutKit/LayoutKit.framework",
-				"${BUILT_PRODUCTS_DIR}/PinLayout/PinLayout.framework",
-				"${PODS_ROOT}/Reveal-SDK/RevealServer-13/iOS/RevealServer.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlexLayout.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LayoutKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinLayout.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LayoutFrameworkBenchmark/Pods-LayoutFrameworkBenchmark-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FB2DF4C2068AD4C560959816 /* [CP] Check Pods Manifest.lock */ = {

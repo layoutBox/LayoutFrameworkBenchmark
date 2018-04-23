@@ -1,31 +1,21 @@
 PODS:
-  - FlexLayout (1.3.5)
+  - FlexLayout (1.3.6)
   - LayoutKit (7.0.2)
-  - PinLayout (1.5.9)
-  - Reveal-SDK (13)
+  - PinLayout (1.7.2)
+  - Reveal-SDK (14)
 
 DEPENDENCIES:
   - FlexLayout
   - LayoutKit
-  - PinLayout (from `https://github.com/mirego/PinLayout.git`, commit `41f0d47`)
+  - PinLayout
   - Reveal-SDK
 
-EXTERNAL SOURCES:
-  PinLayout:
-    :commit: 41f0d47
-    :git: https://github.com/mirego/PinLayout.git
-
-CHECKOUT OPTIONS:
-  PinLayout:
-    :commit: 41f0d47
-    :git: https://github.com/mirego/PinLayout.git
-
 SPEC CHECKSUMS:
-  FlexLayout: 8cfa915850eab120c3d89c3b8b02e3aca96de554
+  FlexLayout: bcdde388eaf826cfb6f801c8a507e2dca70412fa
   LayoutKit: 183c513f8322f4e22321499e54163864bcdf7d97
-  PinLayout: b2ebf8622b28e82b6e1216ab4e4a0a8d082214fe
-  Reveal-SDK: ccc2b0f8014965ea448b7534a7c2c8da232b75e8
+  PinLayout: bbe0fc9a60ef0f3dc1909ea26e7a1684b30a263d
+  Reveal-SDK: 55b5c5545233b680c2f8da734f202acc15d422b7
 
-PODFILE CHECKSUM: 0b632096e0e587472c5a809521683004bf9e1942
+PODFILE CHECKSUM: ae655f930c514ff23a524af2662b04f9eb65b4a4
 
 COCOAPODS: 1.3.1
