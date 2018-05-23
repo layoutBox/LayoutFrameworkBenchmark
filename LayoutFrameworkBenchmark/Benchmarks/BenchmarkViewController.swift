@@ -39,6 +39,11 @@ class BenchmarkViewController: UITableViewController {
             return CollectionViewControllerFeedItemManualView(data: data)
         }),
         
+        ViewControllerData(title: "NotAutoLayout", factoryBlock: { viewCount in
+            let data = FeedItemData.generate(count: viewCount)
+            return CollectionViewControllerFeedItemNotAutoLayoutView(data: data)
+        }),
+        
         ViewControllerData(title: "PinLayout 1.7", factoryBlock: { viewCount in
             let data = FeedItemData.generate(count: viewCount)
             return CollectionViewControllerFeedItemPinLayoutView(data: data)
