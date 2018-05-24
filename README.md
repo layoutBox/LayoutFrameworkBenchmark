@@ -50,6 +50,10 @@ LayoutKit is a fast view layout library for iOS, macOS, and tvOS.
 Layout is done by setting UIView's frame property directly. This implementation comes directly from the LayoutKit benchmark.
 [Manual layout benchmark's source code](https://github.com/layoutBox/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/Benchmarks/ManualLayout/FeedItemManualView.swift)
 
+* [**NotAutoLayout**](https://github.com/el-hoshino/NotAutoLayout)  
+Layout your views without Auto Layout constraints, in a much more swifty way.  
+[NotAutoLayout benchmark's source code](https://github.com/layoutBox/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/Benchmarks/NotAutoLayout/FeedItemNotAutoLayoutView.swift)
+
 * [**PinLayout**](https://github.com/mirego/PinLayout)  
 Fast Swift UIViews layouting without auto layout. No magic, pure code, full control and blazing fast. Concise syntax, intuitive, readable & chainable.  
 [PinLayout benchmark's source code](https://github.com/layoutBox/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/Benchmarks/PinLayout/FeedItemPinLayoutView.swift)
