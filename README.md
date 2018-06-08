@@ -54,7 +54,7 @@ Layout is done by setting UIView's frame property directly. This implementation 
 Layout your views without Auto Layout constraints, in a much more swifty way.  
 [NotAutoLayout benchmark's source code](https://github.com/layoutBox/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/Benchmarks/NotAutoLayout/FeedItemNotAutoLayoutView.swift)
 
-* [**PinLayout**](https://github.com/mirego/PinLayout)  
+* [**PinLayout**](https://github.com/layoutBox/PinLayout)  
 Fast Swift UIViews layouting without auto layout. No magic, pure code, full control and blazing fast. Concise syntax, intuitive, readable & chainable.  
 [PinLayout benchmark's source code](https://github.com/layoutBox/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/Benchmarks/PinLayout/FeedItemPinLayoutView.swift)
 
