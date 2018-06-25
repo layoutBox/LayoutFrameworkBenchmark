@@ -51,7 +51,8 @@ Layout is done by setting UIView's frame property directly. This implementation 
 [Manual layout benchmark's source code](https://github.com/layoutBox/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/Benchmarks/ManualLayout/FeedItemManualView.swift)
 
 * [**NKFrameLayoutKit**](https://github.com/kennic/NKFrameLayoutKit)  
-NKFrameLayoutKit is a fast and easy to use layout framework
+NKFrameLayoutKit is a fast and easy to use layout framework.
+
 [NKFrameLayoutKit benchmark's source code](https://github.com/kennic/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/Benchmarks/NKFrameLayoutKit/NKFrameLayoutKitView.swift)
 
 * [**NotAutoLayout**](https://github.com/el-hoshino/NotAutoLayout)  
