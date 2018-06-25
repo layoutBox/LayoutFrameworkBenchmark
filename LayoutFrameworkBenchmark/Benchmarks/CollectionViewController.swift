@@ -28,6 +28,7 @@ class CollectionViewControllerFeedItemManualView: CollectionViewController<FeedI
 class CollectionViewControllerFeedItemNotAutoLayoutView: CollectionViewController<FeedItemNotAutoLayoutView> {}
 class CollectionViewControllerFeedItemPinLayoutView: CollectionViewController<FeedItemPinLayoutView> {}
 class CollectionViewControllerFeedItemFlexLayoutView: CollectionViewController<FeedItemFlexLayoutView> {}
+class CollectionViewControllerFeedItemNKFrameLayoutKitView: CollectionViewController<NKFrameLayoutKitView> {}
 
 /// A UICollectionView controller where each cell's content view is a DataBinder.
 class CollectionViewController<ContentViewType: UIView>: UICollectionViewController, UICollectionViewDelegateFlowLayout where ContentViewType: DataBinder {
