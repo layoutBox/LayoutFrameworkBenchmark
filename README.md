@@ -51,8 +51,7 @@ Layout is done by setting UIView's frame property directly. This implementation 
 [Manual layout benchmark's source code](https://github.com/layoutBox/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/Benchmarks/ManualLayout/FeedItemManualView.swift)
 
 * [**NKFrameLayoutKit**](https://github.com/kennic/NKFrameLayoutKit)  
-NKFrameLayoutKit is a fast and easy to use layout framework.
-
+NKFrameLayoutKit is a fast and easy to use layout library  
 [NKFrameLayoutKit benchmark's source code](https://github.com/kennic/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/Benchmarks/NKFrameLayoutKit/NKFrameLayoutKitView.swift)
 
 * [**NotAutoLayout**](https://github.com/el-hoshino/NotAutoLayout)  
@@ -85,7 +84,7 @@ Here are the benchmark rendering results to compare visual results:
 * [FlexLayout rendering result](docs_markdown/benchmark_result_FlexLayout.png)
 * [PinLayout rendering result](docs_markdown/benchmark_result_PinLayout.png)
 * [LayoutKit rendering result](docs_markdown/benchmark_result_LayoutKit.png)
-* [NKFrameLayoutKit rendering result](docs_markdown/benchmark_result_NKFrameLayout.png)
+* [NKFrameLayoutKit rendering result](docs_markdown/benchmark_result_NKFrameLayoutKit.png)
 
 :pushpin: Some work would be required to adjust the layout so that they all match perfectly. 
 
