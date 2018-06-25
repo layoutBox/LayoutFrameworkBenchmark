@@ -134,15 +134,7 @@ class NKFrameLayoutKitView: UIView, DataBinder {
 		addSubview(actorCommentLabel)
 		backgroundColor = UIColor.white
 		
-		mainFrameLayout = NKGridFrameLayout(direction: .vertical)
-		mainFrameLayout.add(topBar)
-		mainFrameLayout.add(posters)
-		mainFrameLayout.add(withTargetView: posterCommentLabel)
-		mainFrameLayout.add(withTargetView: contentImageView)
-		mainFrameLayout.add(withTargetView: contentTitleLabel)
-		mainFrameLayout.add(withTargetView: contentDomainLabel)
-		mainFrameLayout.add(actions)
-		mainFrameLayout.add(comment)
+		mainFrameLayout = NKGridFrameLayout(direction: .vertical, andViews: [topBar, posters, posterCommentLabel, contentImageView, contentTitleLabel, contentDomainLabel, actions, comment])
 		mainFrameLayout.edgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
 		addSubview(mainFrameLayout)
 	}
