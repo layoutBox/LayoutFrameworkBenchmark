@@ -2,7 +2,7 @@ PODS:
   - FlexLayout (1.3.6)
   - LayoutKit (7.0.2)
   - NotAutoLayout (3.1.1)
-  - PinLayout (1.7.5)
+  - PinLayout (1.7.9)
   - Reveal-SDK (14)
 
 DEPENDENCIES:
@@ -24,7 +24,7 @@ SPEC CHECKSUMS:
   FlexLayout: bcdde388eaf826cfb6f801c8a507e2dca70412fa
   LayoutKit: 183c513f8322f4e22321499e54163864bcdf7d97
   NotAutoLayout: 2e6e82146dcb556cb61fcfd638b202639c167e84
-  PinLayout: d89b8e7107f872c039f15132094bc417aa83271d
+  PinLayout: 21ce87a865407a7a3c8a38a326611c476095fedf
   Reveal-SDK: 55b5c5545233b680c2f8da734f202acc15d422b7
 
 PODFILE CHECKSUM: 8558b640c2bd1d253536da517991c188d0d44fed
