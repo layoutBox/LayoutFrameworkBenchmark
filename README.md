@@ -52,7 +52,7 @@ Layout is done by setting UIView's frame property directly. This implementation 
 
 * [**NKFrameLayoutKit**](https://github.com/kennic/NKFrameLayoutKit)  
 NKFrameLayoutKit is a fast and easy to use layout library  
-[NKFrameLayoutKit benchmark's source code](https://github.com/kennic/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/Benchmarks/NKFrameLayoutKit/NKFrameLayoutKitView.swift)
+[NKFrameLayoutKit benchmark's source code](https://github.com/layoutBox/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/Benchmarks/NKFrameLayoutKit/NKFrameLayoutKitView.swift)
 
 * [**NotAutoLayout**](https://github.com/el-hoshino/NotAutoLayout)  
 Layout your views without Auto Layout constraints, in a much more swifty way.  
