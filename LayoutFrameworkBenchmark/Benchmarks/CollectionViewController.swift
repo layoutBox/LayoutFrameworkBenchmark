@@ -63,7 +63,7 @@ class CollectionViewController<ContentViewType: UIView>: UICollectionViewControl
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: CellType = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CellType
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CellType
         cell.setData(data[indexPath.row])
         return cell
     }

@@ -158,7 +158,7 @@ class FeedItemPinLayoutView: UIView, DataBinder {
         
         posterCommentLabel.pin.below(of: posterTimeLabel).left(hMargin).right(hMargin).marginTop(vMargin).sizeToFit(.width)
         
-        contentImageView.pin.below(of: posterCommentLabel, aligned: .left).right().marginRight(hMargin)
+        contentImageView.pin.below(of: posterCommentLabel, aligned: .left).right().marginTop(vMargin).marginRight(hMargin)
         contentTitleLabel.pin.below(of: contentImageView).left().right().marginHorizontal(hMargin).sizeToFit(.width)
         contentDomainLabel.pin.below(of: contentTitleLabel, aligned: .left).right().marginRight(hMargin).sizeToFit(.width)
         
