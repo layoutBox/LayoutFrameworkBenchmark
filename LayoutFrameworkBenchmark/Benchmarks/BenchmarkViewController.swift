@@ -38,6 +38,11 @@ class BenchmarkViewController: UITableViewController {
             let data = FeedItemData.generate(count: viewCount)
             return CollectionViewControllerFeedItemManualView(data: data)
         }),
+		
+		ViewControllerData(title: "NKFrameLayoutKit", factoryBlock: { viewCount in
+			let data = FeedItemData.generate(count: viewCount)
+			return CollectionViewControllerFeedItemNKFrameLayoutKitView(data: data)
+		}),
         
         ViewControllerData(title: "NotAutoLayout", factoryBlock: { viewCount in
             let data = FeedItemData.generate(count: viewCount)
