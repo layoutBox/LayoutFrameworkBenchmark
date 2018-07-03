@@ -80,11 +80,10 @@ The benchmark layout UICollectionView cells in multiple pass, each pass contains
 ## Benchmark cell's layout
 Here are the benchmark rendering results to compare visual results:
  
-* [Auto layout rendering result](docs_markdown/benchmark_result_Autolayout.png)
-* [FlexLayout rendering result](docs_markdown/benchmark_result_FlexLayout.png)
-* [PinLayout rendering result](docs_markdown/benchmark_result_PinLayout.png)
 * [LayoutKit rendering result](docs_markdown/benchmark_result_LayoutKit.png)
+* [Manual layout rendering result](docs_markdown/benchmark_result_ManualLayout.png)
 * [NKFrameLayoutKit rendering result](docs_markdown/benchmark_result_NKFrameLayoutKit.png)
+* [PinLayout rendering result](docs_markdown/benchmark_result_PinLayout.png)
 
 :pushpin: Some work would be required to adjust the layout so that they all match perfectly. 
 

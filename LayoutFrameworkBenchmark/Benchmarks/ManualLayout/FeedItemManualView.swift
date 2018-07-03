@@ -10,10 +10,10 @@ import UIKit
 
 /// A LinkedIn feed item that is implemented with manual layout code.
 class FeedItemManualView: UIView, DataBinder {
+    let hMargin: CGFloat = 8
 
     let actionLabel: UILabel = {
         let l = UILabel()
-        l.backgroundColor = UIColor.blue
         return l
     }()
 
@@ -33,15 +33,24 @@ class FeedItemManualView: UIView, DataBinder {
         return i
     }()
 
-    let posterNameLabel: UILabel = UILabel()
-
-    let posterHeadlineLabel: UILabel = {
+    let posterNameLabel: UILabel = {
         let l = UILabel()
-        l.numberOfLines = 3
+        l.backgroundColor = UIColor.yellow
         return l
     }()
 
-    let posterTimeLabel: UILabel = UILabel()
+    let posterHeadlineLabel: UILabel = {
+        let l = UILabel()
+        l.backgroundColor = UIColor.yellow
+        return l
+    }()
+
+    let posterTimeLabel: UILabel = {
+        let l = UILabel()
+        l.backgroundColor = UIColor.yellow
+        return l
+    }()
+
     let posterCommentLabel: UILabel = UILabel()
 
     let contentImageView: UIImageView = {
@@ -57,7 +66,7 @@ class FeedItemManualView: UIView, DataBinder {
 
     let likeLabel: UILabel = {
         let l = UILabel()
-        l.backgroundColor = UIColor(red: 0, green: 0.9, blue: 0, alpha: 1)
+        l.backgroundColor = .green
         l.text = "Like"
         return l
     }()
@@ -65,7 +74,7 @@ class FeedItemManualView: UIView, DataBinder {
     let commentLabel: UILabel = {
         let l = UILabel()
         l.text = "Comment"
-        l.backgroundColor = UIColor(red: 0, green: 1.0, blue: 0, alpha: 1)
+        l.backgroundColor = .green
         l.textAlignment = .center
         return l
     }()
@@ -73,7 +82,7 @@ class FeedItemManualView: UIView, DataBinder {
     let shareLabel: UILabel = {
         let l = UILabel()
         l.text = "Share"
-        l.backgroundColor = UIColor(red: 0, green: 0.8, blue: 0, alpha: 1)
+        l.backgroundColor = .green
         l.textAlignment = .right
         return l
     }()
@@ -112,9 +121,16 @@ class FeedItemManualView: UIView, DataBinder {
 
     func setData(_ data: FeedItemData) {
         actionLabel.text = data.actionText
+
         posterNameLabel.text = data.posterName
+        posterNameLabel.sizeToFit()
+
         posterHeadlineLabel.text = data.posterHeadline
+        posterHeadlineLabel.sizeToFit()
+
         posterTimeLabel.text = data.posterTimestamp
+        posterTimeLabel.sizeToFit()
+
         posterCommentLabel.text = data.posterComment
         contentTitleLabel.text = data.contentTitle
         contentDomainLabel.text = data.contentDomain
@@ -124,57 +140,59 @@ class FeedItemManualView: UIView, DataBinder {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        optionsLabel.frame = CGRect(x: bounds.width-optionsLabel.frame.width, y: 0, width: optionsLabel.frame.width, height: optionsLabel.frame.height)
-        actionLabel.frame = CGRect(x: 0, y: 0, width: bounds.width-optionsLabel.frame.width, height: 0)
+
+        let vMargin: CGFloat = 4
+        let spacing: CGFloat = 1
+
+        optionsLabel.frame = CGRect(x: bounds.width-optionsLabel.frame.width - hMargin, y: hMargin, width: optionsLabel.frame.width, height: optionsLabel.frame.height)
+        actionLabel.frame = CGRect(x: hMargin, y: hMargin, width: bounds.width-optionsLabel.frame.width, height: 0)
         actionLabel.sizeToFit()
 
-        posterImageView.frame = CGRect(x: 0, y: actionLabel.frame.bottom, width: posterImageView.frame.width, height: 0)
+        posterImageView.frame = CGRect(x: hMargin, y: actionLabel.frame.bottom + 10, width: posterImageView.frame.width, height: 0)
         posterImageView.sizeToFit()
 
-        let contentInsets = UIEdgeInsets(top: 0, left: 1, bottom: 2, right: 3)
-        let posterLabelWidth = bounds.width-posterImageView.frame.width - contentInsets.left - contentInsets.right
-        posterNameLabel.frame = CGRect(x: posterImageView.frame.right + contentInsets.left, y: posterImageView.frame.origin.y + contentInsets.top, width: posterLabelWidth, height: 0)
-        posterNameLabel.sizeToFit()
+        let contentInsets = UIEdgeInsets(top: -10, left: 2, bottom: 2, right: 3)
+        posterNameLabel.frame = CGRect(x: posterImageView.frame.right + contentInsets.left, y: posterImageView.frame.origin.y + contentInsets.top, width: posterNameLabel.frame.width, height: posterNameLabel.frame.height)
 
-        let spacing: CGFloat = 1
-        posterHeadlineLabel.frame = CGRect(x: posterImageView.frame.right + contentInsets.left, y: posterNameLabel.frame.bottom + spacing, width: posterLabelWidth, height: 0)
-        posterHeadlineLabel.sizeToFit()
+        posterHeadlineLabel.frame = CGRect(x: posterImageView.frame.right + contentInsets.left, y: posterNameLabel.frame.bottom + spacing, width: posterHeadlineLabel.frame.width, height: posterHeadlineLabel.frame.height)
 
-        posterTimeLabel.frame = CGRect(x: posterImageView.frame.right + contentInsets.left, y: posterHeadlineLabel.frame.bottom + spacing, width: posterLabelWidth, height: 0)
-        posterTimeLabel.sizeToFit()
+        posterTimeLabel.frame = CGRect(x: posterImageView.frame.right + contentInsets.left, y: posterHeadlineLabel.frame.bottom + spacing, width: posterTimeLabel.frame.width, height: posterTimeLabel.frame.height)
 
-        posterCommentLabel.frame = CGRect(x: 0, y: max(posterImageView.frame.bottom, posterTimeLabel.frame.bottom + contentInsets.bottom), width: frame.width, height: 0)
+        posterCommentLabel.frame = CGRect(x: hMargin, y: max(posterImageView.frame.bottom, posterTimeLabel.frame.bottom + contentInsets.bottom), width: frame.width, height: 0)
         posterCommentLabel.sizeToFit()
 
-        contentImageView.frame = CGRect(x: frame.width/2 - contentImageView.frame.width/2, y: posterCommentLabel.frame.bottom, width: frame.width, height: 0)
+        contentImageView.frame = CGRect(x: hMargin, y: posterCommentLabel.frame.bottom, width: frame.width, height: 0)
         contentImageView.sizeToFit()
 
-        contentTitleLabel.frame = CGRect(x: 0, y: contentImageView.frame.bottom, width: frame.width, height: 0)
+        contentTitleLabel.frame = CGRect(x: hMargin, y: contentImageView.frame.bottom, width: frame.width, height: 0)
         contentTitleLabel.sizeToFit()
 
-        contentDomainLabel.frame = CGRect(x: 0, y: contentTitleLabel.frame.bottom, width: frame.width, height: 0)
+        contentDomainLabel.frame = CGRect(x: hMargin, y: contentTitleLabel.frame.bottom, width: frame.width, height: 0)
         contentDomainLabel.sizeToFit()
 
-        likeLabel.frame = CGRect(x: 0, y: contentDomainLabel.frame.bottom, width: 0, height: 0)
+        likeLabel.frame = CGRect(x: hMargin, y: contentDomainLabel.frame.bottom + vMargin, width: 0, height: 0)
         likeLabel.sizeToFit()
 
         commentLabel.sizeToFit()
-        commentLabel.frame = CGRect(x: frame.width/2-commentLabel.frame.width/2, y: contentDomainLabel.frame.bottom, width: commentLabel.frame.width, height: commentLabel.frame.height)
+        commentLabel.frame = CGRect(x: frame.width / 2 - commentLabel.frame.width / 2, y: contentDomainLabel.frame.bottom + vMargin, width: commentLabel.frame.width, height: commentLabel.frame.height)
 
         shareLabel.sizeToFit()
-        shareLabel.frame = CGRect(x: frame.width-shareLabel.frame.width, y: contentDomainLabel.frame.bottom, width: shareLabel.frame.width, height: shareLabel.frame.height)
+        shareLabel.frame = CGRect(x: frame.width - shareLabel.frame.width - hMargin, y: contentDomainLabel.frame.bottom + vMargin, width: shareLabel.frame.width, height: shareLabel.frame.height)
 
-        actorImageView.frame = CGRect(x: 0, y: likeLabel.frame.bottom, width: 0, height: 0)
+        actorImageView.frame = CGRect(x: hMargin, y: likeLabel.frame.bottom + vMargin, width: 0, height: 0)
         actorImageView.sizeToFit()
 
-        actorCommentLabel.frame = CGRect(x: actorImageView.frame.right, y: likeLabel.frame.bottom, width: frame.width-actorImageView.frame.width, height: 0)
+        actorCommentLabel.frame = CGRect(x: actorImageView.frame.right + vMargin,
+                                         y: actorImageView.frame.minY + (actorImageView.frame.height - actorCommentLabel.frame.height) / 2,
+                                         width: frame.width-actorImageView.frame.width,
+                                         height: 0)
         actorCommentLabel.sizeToFit()
     }
 
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         layoutSubviews()
-        return CGSize(width: size.width, height: max(actorImageView.frame.bottom, actorCommentLabel.frame.bottom))
+        return CGSize(width: size.width, height: max(actorImageView.frame.bottom, actorCommentLabel.frame.bottom) + hMargin)
     }
 
     override var intrinsicContentSize: CGSize {

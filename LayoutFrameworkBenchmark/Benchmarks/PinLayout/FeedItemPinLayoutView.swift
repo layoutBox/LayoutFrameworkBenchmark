@@ -130,12 +130,22 @@ class FeedItemPinLayoutView: UIView, DataBinder {
         actionLabel.sizeToFit()
         
         posterNameLabel.text = data.posterName
+        posterNameLabel.sizeToFit()
+
         posterHeadlineLabel.text = data.posterHeadline
+        posterHeadlineLabel.sizeToFit()
+
         posterTimeLabel.text = data.posterTimestamp
+        posterTimeLabel.sizeToFit()
         
         posterCommentLabel.text = data.posterComment
+
         contentTitleLabel.text = data.contentTitle
+        contentTitleLabel.sizeToFit()
+
         contentDomainLabel.text = data.contentDomain
+        contentDomainLabel.sizeToFit()
+        
         actorCommentLabel.text = data.actorComment
         actorCommentLabel.sizeToFit()
         setNeedsLayout()
@@ -145,29 +155,29 @@ class FeedItemPinLayoutView: UIView, DataBinder {
         super.layoutSubviews()
         
         let hMargin: CGFloat = 8
-        let vMargin: CGFloat = 2
+        let vMargin: CGFloat = 4
         
         optionsLabel.pin.topRight().margin(hMargin)
         actionLabel.pin.topLeft().margin(hMargin)
         
         posterImageView.pin.below(of: actionLabel, aligned: .left).marginTop(10)
         
-        posterNameLabel.pin.right(of: posterImageView, aligned: .top).margin(-6, 6).right(hMargin).sizeToFit(.width)
-        posterHeadlineLabel.pin.below(of: posterNameLabel, aligned: .left).right(hMargin).marginTop(1).sizeToFit(.width)
-        posterTimeLabel.pin.below(of: posterHeadlineLabel, aligned: .left).right(hMargin).marginTop(1).sizeToFit(.width)
+        posterHeadlineLabel.pin.after(of: posterImageView, aligned: .center).marginLeft(4)
+        posterNameLabel.pin.above(of: posterHeadlineLabel, aligned: .left).marginBottom(vMargin)
+        posterTimeLabel.pin.below(of: posterHeadlineLabel, aligned: .left).marginTop(vMargin)
         
-        posterCommentLabel.pin.below(of: posterTimeLabel).left(hMargin).right(hMargin).marginTop(vMargin).sizeToFit(.width)
+        posterCommentLabel.pin.below(of: posterTimeLabel).left(hMargin).marginTop(vMargin)
         
         contentImageView.pin.below(of: posterCommentLabel, aligned: .left).right().marginTop(vMargin).marginRight(hMargin)
-        contentTitleLabel.pin.below(of: contentImageView).left().right().marginHorizontal(hMargin).sizeToFit(.width)
-        contentDomainLabel.pin.below(of: contentTitleLabel, aligned: .left).right().marginRight(hMargin).sizeToFit(.width)
+        contentTitleLabel.pin.below(of: contentImageView).left().marginHorizontal(hMargin)
+        contentDomainLabel.pin.below(of: contentTitleLabel, aligned: .left)
         
         likeLabel.pin.below(of: contentDomainLabel, aligned: .left).marginTop(vMargin)
         commentLabel.pin.top(to: likeLabel.edge.top).hCenter()
         shareLabel.pin.top(to: likeLabel.edge.top).right().marginRight(hMargin)
         
         actorImageView.pin.below(of: likeLabel, aligned: .left).marginTop(vMargin)
-        actorCommentLabel.pin.right(of: actorImageView, aligned: .center).marginLeft(4)
+        actorCommentLabel.pin.after(of: actorImageView, aligned: .center).marginLeft(4)
     }
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {

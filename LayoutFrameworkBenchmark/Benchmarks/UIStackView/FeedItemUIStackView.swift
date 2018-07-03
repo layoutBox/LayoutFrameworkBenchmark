@@ -42,15 +42,24 @@ class FeedItemUIStackView: DebugStackView, DataBinder {
         return i
     }()
 
-    let posterNameLabel: UILabel = UILabel()
+    let posterNameLabel: UILabel = {
+        let l = UILabel()
+        l.backgroundColor = UIColor.yellow
+        return l
+    }()
 
     let posterHeadlineLabel: UILabel = {
         let l = UILabel()
         l.numberOfLines = 3
+        l.backgroundColor = UIColor.yellow
         return l
     }()
 
-    let posterTimeLabel: UILabel = UILabel()
+    let posterTimeLabel: UILabel = {
+        let l = UILabel()
+        l.backgroundColor = UIColor.yellow
+        return l
+    }()
 
     lazy var posterLabels: DebugStackView = {
         let v = DebugStackView(arrangedSubviews: [self.posterNameLabel, self.posterHeadlineLabel, self.posterTimeLabel])

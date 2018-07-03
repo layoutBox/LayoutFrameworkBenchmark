@@ -15,7 +15,6 @@ class NKFrameLayoutKitView: UIView, DataBinder {
     
     let actionLabel: UILabel = {
         let l = UILabel()
-        l.backgroundColor = UIColor.blue
         return l
     }()
     
@@ -33,7 +32,11 @@ class NKFrameLayoutKitView: UIView, DataBinder {
         return i
     }()
     
-    let posterNameLabel: UILabel = UILabel()
+    let posterNameLabel: UILabel = {
+        let l = UILabel()
+        l.backgroundColor = UIColor.yellow
+        return l
+    }()
     
     let posterHeadlineLabel: UILabel = {
         let l = UILabel()
@@ -41,7 +44,12 @@ class NKFrameLayoutKitView: UIView, DataBinder {
         return l
     }()
     
-    let posterTimeLabel: UILabel = UILabel()
+    let posterTimeLabel: UILabel = {
+        let l = UILabel()
+        l.backgroundColor = UIColor.yellow
+        return l
+    }()
+    
     let posterCommentLabel: UILabel = UILabel()
     
     let contentImageView: UIImageView = {
@@ -56,7 +64,7 @@ class NKFrameLayoutKitView: UIView, DataBinder {
     
     let likeLabel: UILabel = {
         let l = UILabel()
-        l.backgroundColor = UIColor(red: 0, green: 0.9, blue: 0, alpha: 1)
+        l.backgroundColor = .green
         l.text = "Like"
         return l
     }()
@@ -64,7 +72,7 @@ class NKFrameLayoutKitView: UIView, DataBinder {
     let commentLabel: UILabel = {
         let l = UILabel()
         l.text = "Comment"
-        l.backgroundColor = UIColor(red: 0, green: 1.0, blue: 0, alpha: 1)
+        l.backgroundColor = .green
         l.textAlignment = .center
         return l
     }()
@@ -72,7 +80,7 @@ class NKFrameLayoutKitView: UIView, DataBinder {
     let shareLabel: UILabel = {
         let l = UILabel()
         l.text = "Share"
-        l.backgroundColor = UIColor(red: 0, green: 0.8, blue: 0, alpha: 1)
+        l.backgroundColor = .green
         l.textAlignment = .right
         return l
     }()

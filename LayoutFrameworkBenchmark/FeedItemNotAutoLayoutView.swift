@@ -140,7 +140,6 @@ private class ActionTitleView: UIView {
     
     let actionLabel: UILabel = {
         let l = UILabel()
-        l.backgroundColor = UIColor.blue
         return l
     }()
     
@@ -301,7 +300,7 @@ private class ContentView: UIView {
     
     let likeLabel: UILabel = {
         let l = UILabel()
-        l.backgroundColor = UIColor(red: 0, green: 0.9, blue: 0, alpha: 1)
+        l.backgroundColor = .green
         l.text = "Like"
         return l
     }()
@@ -309,7 +308,7 @@ private class ContentView: UIView {
     let commentLabel: UILabel = {
         let l = UILabel()
         l.text = "Comment"
-        l.backgroundColor = UIColor(red: 0, green: 1.0, blue: 0, alpha: 1)
+        l.backgroundColor = .green
         l.textAlignment = .center
         return l
     }()
@@ -317,7 +316,7 @@ private class ContentView: UIView {
     let shareLabel: UILabel = {
         let l = UILabel()
         l.text = "Share"
-        l.backgroundColor = UIColor(red: 0, green: 0.8, blue: 0, alpha: 1)
+        l.backgroundColor = .green
         l.textAlignment = .right
         return l
     }()
