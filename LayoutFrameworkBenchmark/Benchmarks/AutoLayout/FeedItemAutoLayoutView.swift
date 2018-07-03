@@ -135,15 +135,25 @@ class MiniProfileView: UIView {
         return i
     }()
 
-    let posterNameLabel: UILabel = UILabel()
+    let posterNameLabel: UILabel = {
+        let l = UILabel()
+        l.backgroundColor = UIColor.yellow
+        return l
+    }()
 
     let posterHeadlineLabel: UILabel = {
         let l = UILabel()
         l.numberOfLines = 3
+        l.backgroundColor = UIColor.yellow
         return l
     }()
 
-    let posterTimeLabel: UILabel = UILabel()
+    let posterTimeLabel: UILabel = {
+        let l = UILabel()
+        l.backgroundColor = UIColor.yellow
+        return l
+    }()
+
     let posterCommentLabel: UILabel = UILabel()
 
     init() {
@@ -176,14 +186,14 @@ class SocialActionsView: UIView {
     let likeLabel: UILabel = {
         let l = UILabel()
         l.text = "Like"
-        l.backgroundColor = UIColor(red: 0, green: 0.9, blue: 0, alpha: 1)
+        l.backgroundColor = .green
         return l
     }()
 
     let commentLabel: UILabel = {
         let l = UILabel()
         l.text = "Comment"
-        l.backgroundColor = UIColor(red: 0, green: 1.0, blue: 0, alpha: 1)
+        l.backgroundColor = .green
         l.textAlignment = .center
         return l
     }()
@@ -192,7 +202,7 @@ class SocialActionsView: UIView {
         let l = UILabel()
         l.text = "Share"
         l.textAlignment = .right
-        l.backgroundColor = UIColor(red: 0, green: 0.8, blue: 0, alpha: 1)
+        l.backgroundColor = .green
         return l
     }()
 
@@ -235,7 +245,6 @@ class TopBarView: UIView {
 
     init() {
         super.init(frame: .zero)
-        backgroundColor = UIColor.blue
         let views: [String: UIView] = ["actionLabel": actionLabel, "optionsLabel": optionsLabel]
         addAutoLayoutSubviews(views)
         addConstraints(withVisualFormat: "H:|-0-[actionLabel]-0-[optionsLabel]-0-|", views: views)

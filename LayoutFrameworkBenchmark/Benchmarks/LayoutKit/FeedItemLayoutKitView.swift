@@ -28,7 +28,6 @@ class FeedItemLayoutKitView: UIView, DataBinder {
     func setData(_ data: FeedItemData) {
         let posterProfile = ProfileCardLayout(
             name: data.posterName,
-            connectionDegree: "2nd",
             headline: data.posterHeadline,
             timestamp: data.posterTimestamp,
             profileImageName: "50x50.png")

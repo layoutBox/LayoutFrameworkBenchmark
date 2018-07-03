@@ -11,7 +11,7 @@ import LayoutKit
 
 open class ProfileCardLayout: StackLayout<UIView> {
 
-    public init(name: String, connectionDegree: String, headline: String, timestamp: String, profileImageName: String) {
+    public init(name: String, headline: String, timestamp: String, profileImageName: String) {
         let labelConfig = { (label: UILabel) in
             label.backgroundColor = UIColor.yellow
         }
@@ -21,9 +21,6 @@ open class ProfileCardLayout: StackLayout<UIView> {
             spacing: 4,
             sublayouts: [
                 LabelLayout(text: name, viewReuseId: "name", config: labelConfig),
-                LabelLayout(text: connectionDegree, viewReuseId: "connectionDegree", config: { label in
-                    label.backgroundColor = UIColor.gray
-                }),
             ]
         )
 
