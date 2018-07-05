@@ -29,6 +29,20 @@ Choosing the right layout framework for your project is an important decision. T
 
 <br>
 
+## Benchmark charts  
+
+
+##### General comparison
+
+This chart display a general comparison between device performance using each layout frameworks.
+It displays the performance when layouting UICollectionView cells. This graph shows performance when layouting 100 UICollectionView cells.
+
+The **Y axis** indicates the **number of seconds** to render all cells.
+
+<a href="docs_markdown/benchmark_comparison_all.png"><img src="docs_markdown/benchmark_comparison_all.png"/></a>
+<br>
+
+
 # Layout frameworks  <a name="layout_frameworks"></a>
 
 **The benchmark currently includes the following layout frameworks:**  
@@ -89,24 +103,9 @@ Here are the benchmark rendering results to compare visual results:
 
 <br>
 
-# Results <a name="results"></a>
-
 ## Benchmark data  
 You can see the benchmark's data and charts in this **[Google Spreadsheet Document](https://docs.google.com/spreadsheets/d/1sUNdGWBM-d_W13yC7VcfkRXC3owCVsnIublnfW-4xn4/edit#gid=1032991425)**.
 
-<br>
-
-## Benchmark charts  
-
-
-##### General comparison
-
-This chart display a general comparison between device performance using each layout framework.
-It displays the performance when layouting UICollectionView cells. This graph shows performance when layouting 100 UICollectionView cells.
-
-The **Y axis** indicates the **number of seconds** to render all cells.
-
-<a href="docs_markdown/benchmark_comparison_all.png"><img src="docs_markdown/benchmark_comparison_all.png"/></a>
 <br>
 
 ##### Details for different devices
