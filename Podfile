@@ -10,9 +10,10 @@ inhibit_all_warnings!
 
 target 'LayoutFrameworkBenchmark' do
     pod 'FlexLayout'
-	pod 'LayoutKit'
-    pod 'PinLayout'
-    pod 'Reveal-SDK'
+    pod 'LayoutKit'
     pod 'NotAutoLayout'
     pod 'NKFrameLayoutKit'
+    pod 'PinLayout'
+
+    pod 'Reveal-SDK'
 end
