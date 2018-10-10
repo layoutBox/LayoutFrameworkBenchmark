@@ -242,7 +242,7 @@
 					24661CFB1F4EFFF5002CB883 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 4Q596JWQC5;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -290,7 +290,7 @@
 				"${BUILT_PRODUCTS_DIR}/NKFrameLayoutKit/NKFrameLayoutKit.framework",
 				"${BUILT_PRODUCTS_DIR}/NotAutoLayout/NotAutoLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/PinLayout/PinLayout.framework",
-				"${PODS_ROOT}/Reveal-SDK/RevealServer-16/iOS/RevealServer.framework",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-18/iOS/RevealServer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -487,8 +487,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lucdion.LayoutFrameworkBenchmark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -504,8 +503,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lucdion.LayoutFrameworkBenchmark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
