@@ -29,7 +29,7 @@ class BenchmarkViewController: UITableViewController {
             return CollectionViewControllerFeedItemFlexLayoutView(data: data)
         }),
         
-        ViewControllerData(title: "LayoutKit 7.0", factoryBlock: { viewCount in
+        ViewControllerData(title: "LayoutKit 10.0", factoryBlock: { viewCount in
             let data = FeedItemData.generate(count: viewCount)
             return CollectionViewControllerFeedItemLayoutKitView(data: data)
         }),
@@ -39,17 +39,17 @@ class BenchmarkViewController: UITableViewController {
             return CollectionViewControllerFeedItemManualView(data: data)
         }),
 		
-		ViewControllerData(title: "NKFrameLayoutKit", factoryBlock: { viewCount in
+		ViewControllerData(title: "NKFrameLayoutKit 2.4", factoryBlock: { viewCount in
 			let data = FeedItemData.generate(count: viewCount)
 			return CollectionViewControllerFeedItemNKFrameLayoutKitView(data: data)
 		}),
         
-        ViewControllerData(title: "NotAutoLayout", factoryBlock: { viewCount in
+        ViewControllerData(title: "NotAutoLayout 3.2", factoryBlock: { viewCount in
             let data = FeedItemData.generate(count: viewCount)
             return CollectionViewControllerFeedItemNotAutoLayoutView(data: data)
         }),
         
-        ViewControllerData(title: "PinLayout 1.7", factoryBlock: { viewCount in
+        ViewControllerData(title: "PinLayout 1.8", factoryBlock: { viewCount in
             let data = FeedItemData.generate(count: viewCount)
             return CollectionViewControllerFeedItemPinLayoutView(data: data)
         }),
