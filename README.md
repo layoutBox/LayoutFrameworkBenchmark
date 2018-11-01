@@ -112,6 +112,10 @@ You can see the benchmark's data and charts in this **[Google Spreadsheet Docume
 
 The **X axis** in following charts indicates the **number of cells** contained for each pass. The **Y axis** indicates the **number of seconds** to render all cells from one pass.
 
+<a href="docs_markdown/benchmark_iphonexs.png"><img src="docs_markdown/benchmark_iphonexs.png"/></a>
+<br>
+
+
 <a href="docs_markdown/benchmark_iphonex.png"><img src="docs_markdown/benchmark_iphonex.png"/></a>
 <br>
 
