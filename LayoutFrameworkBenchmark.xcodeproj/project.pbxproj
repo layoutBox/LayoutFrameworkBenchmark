@@ -484,7 +484,7 @@
 				DEVELOPMENT_TEAM = ZYH5WDPX24;
 				INFOPLIST_FILE = LayoutFrameworkBenchmark/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lucdion.LayoutFrameworkBenchmark;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mirego.test.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -500,7 +500,7 @@
 				DEVELOPMENT_TEAM = ZYH5WDPX24;
 				INFOPLIST_FILE = LayoutFrameworkBenchmark/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lucdion.LayoutFrameworkBenchmark;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mirego.test.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
