@@ -1,10 +1,13 @@
 language: objective-c
-osx_image: xcode10
+osx_image: xcode11.6
+
+cache:
+  - bundler
+  - cocoapods
 
 before_install:
-  - gem install xcpretty-travis-formatter;
-  - gem install cocoapods --no-document --quiet;
-  - pod install --repo-update;
+  - bundle install # --deployment # to cache vendor/bundle
+  - bundle exec pod install --repo-update
 
 script:
-  - set -o pipefail && xcodebuild -workspace LayoutFrameworkBenchmark.xcworkspace -scheme LayoutFrameworkBenchmark -sdk iphonesimulator12.0 -destination 'platform=iOS Simulator,name=iPhone 8' build | xcpretty -f `xcpretty-travis-formatter`
+  - set -o pipefail && xcodebuild -workspace LayoutFrameworkBenchmark.xcworkspace -scheme LayoutFrameworkBenchmark -sdk iphonesimulator13.6 -destination 'platform=iOS Simulator,name=iPhone 8' build | xcpretty
