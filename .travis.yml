@@ -1,9 +1,12 @@
 language: objective-c
 osx_image: xcode12
 
+cache:
+  - bundler
+  - cocoapods
+
 before_install:
-  - gem install xcpretty-travis-formatter;
-  - gem install cocoapods --no-document --quiet;
+  - bundle install # --deployment # to cache vendor/bundle
   - pod install --repo-update;
 
 script:
