@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode12
+osx_image: xcode11.6
 
 cache:
   - bundler
@@ -10,4 +10,4 @@ before_install:
   - bundle exec pod install --repo-update
 
 script:
-  - set -o pipefail && xcodebuild -workspace LayoutFrameworkBenchmark.xcworkspace -scheme LayoutFrameworkBenchmark -sdk iphonesimulator12.0 -destination 'platform=iOS Simulator,name=iPhone 8' build | xcpretty -f `xcpretty-travis-formatter`
+  - set -o pipefail && xcodebuild -workspace LayoutFrameworkBenchmark.xcworkspace -scheme LayoutFrameworkBenchmark -sdk iphonesimulator13.6 -destination 'platform=iOS Simulator,name=iPhone 8' build | xcpretty -f `xcpretty-travis-formatter`
