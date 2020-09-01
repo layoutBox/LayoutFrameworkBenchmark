@@ -18,6 +18,11 @@ class BenchmarkViewController: UITableViewController {
         //
         // Ordered alphabetically
         //
+
+        ViewControllerData(title: "Texture", factoryBlock: { viewCount in
+            let data = FeedItemData.generate(count: viewCount)
+            return CollectionViewControllerFeedItemTextureView(data: data)
+        }),
         
         ViewControllerData(title: "Auto Layout", factoryBlock: { viewCount in
             let data = FeedItemData.generate(count: viewCount)
