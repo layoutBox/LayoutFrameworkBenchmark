@@ -22,7 +22,6 @@ import UIKit
 @available(iOS 9, *)
 class CollectionViewControllerFeedItemUIStackView: CollectionViewController<FeedItemUIStackView> {}
 
-class CollectionViewControllerFeedItemTextureView: CollectionViewController<FeedItemTextureView> {}
 class CollectionViewControllerFeedItemAutoLayoutView: CollectionViewController<FeedItemAutoLayoutView> {}
 class CollectionViewControllerFeedItemLayoutKitView: CollectionViewController<FeedItemLayoutKitView> {}
 class CollectionViewControllerFeedItemManualView: CollectionViewController<FeedItemManualView> {}

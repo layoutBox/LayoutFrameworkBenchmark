@@ -27,6 +27,7 @@
 		639E5A2020DF62D700C6BCEA /* NKFrameLayoutKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E5A1F20DF62D700C6BCEA /* NKFrameLayoutKitView.swift */; };
 		BF3DC69820B560A400536177 /* FeedItemNotAutoLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3DC69720B560A400536177 /* FeedItemNotAutoLayoutView.swift */; };
 		E4A8A14124FE99B1009D872B /* FeedItemTextureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A8A14024FE982E009D872B /* FeedItemTextureView.swift */; };
+		E4A8A24F24FEDD14009D872B /* TextureCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A8A24E24FEDD14009D872B /* TextureCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		73BD901DE3512A23A7603899 /* Pods-LayoutFrameworkBenchmark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LayoutFrameworkBenchmark.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LayoutFrameworkBenchmark/Pods-LayoutFrameworkBenchmark.debug.xcconfig"; sourceTree = "<group>"; };
 		BF3DC69720B560A400536177 /* FeedItemNotAutoLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemNotAutoLayoutView.swift; sourceTree = "<group>"; };
 		E4A8A14024FE982E009D872B /* FeedItemTextureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemTextureView.swift; sourceTree = "<group>"; };
+		E4A8A24E24FEDD14009D872B /* TextureCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				E4A8A14024FE982E009D872B /* FeedItemTextureView.swift */,
+				E4A8A24E24FEDD14009D872B /* TextureCollectionViewController.swift */,
 			);
 			name = Texture;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4A8A24F24FEDD14009D872B /* TextureCollectionViewController.swift in Sources */,
 				2401BCA11F4F044000788998 /* FeedItemUIStackView.swift in Sources */,
 				2401BC8B1F4F018C00788998 /* Stopwatch.swift in Sources */,
 				2401BC8F1F4F01D600788998 /* FeedItemLayoutKitView.swift in Sources */,

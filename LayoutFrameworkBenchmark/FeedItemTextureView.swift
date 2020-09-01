@@ -10,268 +10,212 @@ import UIKit
 import AsyncDisplayKit
 
 /// A LinkedIn feed item that is implemented with Texture.
-class FeedItemTextureView: UIView, DataBinder {
-
+class FeedItemTextureView: ASCellNode {
     let topBarView = TopBarNode()
     let miniProfileView = MiniProfileNode()
     let miniContentView = MiniContentNode()
     let socialActionsView = SocialActionsNode()
     let commentView = CommentNode()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = UIColor.white
-        let views: [String: UIView] = [
-            "topBarView": topBarView,
-            "miniProfileView": miniProfileView,
-            "miniContentView": miniContentView,
-            "socialActionsView": socialActionsView,
-            "commentView": commentView
-        ]
-
-        addAutoLayoutSubviews(views)
-        addConstraints(withVisualFormat: "V:|-0-[topBarView]-0-[miniProfileView]-0-[miniContentView]-0-[socialActionsView]-0-[commentView]-0-|", views: views)
-        addConstraints(withVisualFormat: "H:|-0-[topBarView]-0-|", views: views)
-        addConstraints(withVisualFormat: "H:|-0-[miniProfileView]-0-|", views: views)
-        addConstraints(withVisualFormat: "H:|-0-[miniContentView]-0-|", views: views)
-        addConstraints(withVisualFormat: "H:|-0-[socialActionsView]-0-|", views: views)
-        addConstraints(withVisualFormat: "H:|-0-[commentView]-0-|", views: views)
+    init(data: FeedItemData) {
+        topBarView.actionLabel.attributedText = data.actionText.makeAttributedString()
+        miniProfileView.posterNameLabel.attributedText = data.posterName.makeAttributedString()
+        miniProfileView.posterHeadlineLabel.attributedText = data.posterHeadline.makeAttributedString()
+        miniProfileView.posterTimeLabel.attributedText = data.posterTimestamp.makeAttributedString()
+        miniProfileView.posterCommentLabel.attributedText = data.posterComment.makeAttributedString()
+        miniContentView.contentTitleLabel.attributedText = data.contentTitle.makeAttributedString()
+        miniContentView.contentDomainLabel.attributedText = data.contentDomain.makeAttributedString()
+        commentView.actorCommentLabel.attributedText = data.actorComment.makeAttributedString()
+        super.init()
+        [topBarView, miniProfileView, miniContentView, socialActionsView, commentView].forEach { addSubnode($0) }
     }
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    func setData(_ data: FeedItemData) {
-        topBarView.actionLabel.text = data.actionText
-        miniProfileView.posterNameLabel.text = data.posterName
-        miniProfileView.posterHeadlineLabel.text = data.posterHeadline
-        miniProfileView.posterTimeLabel.text = data.posterTimestamp
-        miniProfileView.posterCommentLabel.text = data.posterComment
-        miniContentView.contentTitleLabel.text = data.contentTitle
-        miniContentView.contentDomainLabel.text = data.contentDomain
-        commentView.actorCommentLabel.text = data.actorComment
-    }
-
-    override func sizeThatFits(_ size: CGSize) -> CGSize {
-        return systemLayoutSizeFitting(CGSize(width: size.width, height: 0))
+    override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
+        let mainStack = ASStackLayoutSpec(direction: .vertical,
+                                          spacing: 0.0,
+                                          justifyContent: .spaceBetween,
+                                          alignItems: .stretch,
+                                          children: [topBarView, miniProfileView, miniContentView, socialActionsView, commentView])
+        return mainStack
     }
 }
 
-class CommentNode: UIView {
-    let actorImageView: UIImageView = {
-        let i = UIImageView()
+class CommentNode: ASDisplayNode {
+    let actorImageView: ASImageNode = {
+        let i = ASImageNode()
         i.image = UIImage(named: "50x50.png")
-        i.setContentHuggingPriority(UILayoutPriority.required, for: .horizontal)
-        i.setContentCompressionResistancePriority(UILayoutPriority.required, for: .horizontal)
         return i
     }()
 
-    let actorCommentLabel: UILabel = UILabel()
+    let actorCommentLabel: ASTextNode = ASTextNode()
 
-    init() {
-        super.init(frame: .zero)
-
-        let views: [String: UIView] = [
-            "actorImageView": actorImageView,
-            "actorCommentLabel": actorCommentLabel
-        ]
-        addAutoLayoutSubviews(views)
-
-        addConstraints(withVisualFormat: "H:|-0-[actorImageView]-0-[actorCommentLabel]-0-|", views: views)
-        addConstraints(withVisualFormat: "V:|-0-[actorImageView]-(>=0)-|", views: views)
-        addConstraints(withVisualFormat: "V:|-0-[actorCommentLabel]-(>=0)-|", views: views)
-        addConstraints(withVisualFormat: "V:[actorImageView]-(0@749)-|", views: views)
+    override init() {
+        super.init()
+        [actorImageView, actorCommentLabel].forEach { addSubnode($0) }
     }
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
+        actorCommentLabel.style.flexGrow = 1.0
+        let mainStack = ASStackLayoutSpec(direction: .horizontal,
+                                          spacing: 0.0,
+                                          justifyContent: .spaceBetween,
+                                          alignItems: .start,
+                                          children: [actorImageView, actorCommentLabel])
+        return mainStack
     }
 }
 
-class MiniContentNode: UIView {
-    let contentImageView: UIImageView = {
-        let i = UIImageView()
+class MiniContentNode: ASDisplayNode {
+    let contentImageView: ASImageNode = {
+        let i = ASImageNode()
         i.image = UIImage(named: "350x200.png")
         i.contentMode = .scaleAspectFit
         i.backgroundColor = UIColor.orange
         return i
     }()
 
-    let contentTitleLabel: UILabel = UILabel()
-    let contentDomainLabel: UILabel = UILabel()
+    let contentTitleLabel: ASTextNode = ASTextNode()
+    let contentDomainLabel: ASTextNode = ASTextNode()
 
-    init() {
-        super.init(frame: .zero)
-
-        let views: [String: UIView] = [
-            "contentImageView": contentImageView,
-            "contentTitleLabel": contentTitleLabel,
-            "contentDomainLabel": contentDomainLabel
-        ]
-
-        addAutoLayoutSubviews(views)
-
-        addConstraints(withVisualFormat: "V:|-0-[contentImageView]-0-[contentTitleLabel]-0-[contentDomainLabel]-0-|", views: views)
-
-        addConstraints(withVisualFormat: "H:|-0-[contentImageView]-0-|", views: views)
-        addConstraints(withVisualFormat: "H:|-0-[contentTitleLabel]-0-|", views: views)
-        addConstraints(withVisualFormat: "H:|-0-[contentDomainLabel]-0-|", views: views)
+    override init() {
+        super.init()
+        [contentImageView, contentTitleLabel, contentDomainLabel].forEach { addSubnode($0) }
     }
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
+        let mainStack = ASStackLayoutSpec(direction: .vertical,
+                                          spacing: 0.0,
+                                          justifyContent: .spaceBetween,
+                                          alignItems: .stretch,
+                                          children: [contentImageView, contentTitleLabel, contentDomainLabel])
+        return mainStack
     }
 }
 
-class MiniProfileNode: UIView {
-
-    let posterImageView: UIImageView = {
-        let i = UIImageView()
+class MiniProfileNode: ASDisplayNode {
+    let posterImageView: ASImageNode = {
+        let i = ASImageNode()
         i.image = UIImage(named: "50x50.png")
         i.backgroundColor = UIColor.orange
         i.contentMode = .center
-        i.setContentHuggingPriority(UILayoutPriority.required, for: .horizontal)
-        i.setContentCompressionResistancePriority(UILayoutPriority.required, for: .horizontal)
         return i
     }()
 
-    let posterNameLabel: UILabel = {
-        let l = UILabel()
+    let posterNameLabel: ASTextNode = {
+        let l = ASTextNode()
         l.backgroundColor = UIColor.yellow
         return l
     }()
 
-    let posterHeadlineLabel: UILabel = {
-        let l = UILabel()
-        l.numberOfLines = 3
+    let posterHeadlineLabel: ASTextNode = {
+        let l = ASTextNode()
+        l.maximumNumberOfLines = 3
         l.backgroundColor = UIColor.yellow
         return l
     }()
 
-    let posterTimeLabel: UILabel = {
-        let l = UILabel()
+    let posterTimeLabel: ASTextNode = {
+        let l = ASTextNode()
         l.backgroundColor = UIColor.yellow
         return l
     }()
 
-    let posterCommentLabel: UILabel = UILabel()
+    let posterCommentLabel: ASTextNode = ASTextNode()
 
-    init() {
-        super.init(frame: .zero)
-
-        let views: [String: UIView] = [
-            "posterImageView": posterImageView,
-            "posterNameLabel": posterNameLabel,
-            "posterHeadlineLabel": posterHeadlineLabel,
-            "posterTimeLabel": posterTimeLabel,
-            "posterCommentLabel": posterCommentLabel
-        ]
-        addAutoLayoutSubviews(views)
-        addConstraints(withVisualFormat: "V:|-0-[posterImageView]-(>=0)-[posterCommentLabel]-0-|", views: views)
-        addConstraints(withVisualFormat: "V:|-1-[posterNameLabel]-1-[posterHeadlineLabel]-1-[posterTimeLabel]-(>=3)-[posterCommentLabel]", views: views)
-        addConstraints(withVisualFormat: "V:[posterImageView]-(0@749)-[posterCommentLabel]", views: views)
-
-        addConstraints(withVisualFormat: "H:|-0-[posterImageView]-2-[posterNameLabel]-4-|", views: views)
-        addConstraints(withVisualFormat: "H:[posterImageView]-2-[posterHeadlineLabel]-4-|", views: views)
-        addConstraints(withVisualFormat: "H:[posterImageView]-2-[posterTimeLabel]-4-|", views: views)
-        addConstraints(withVisualFormat: "H:|-0-[posterCommentLabel]-0-|", views: views)
+    override init() {
+        super.init()
+        [posterNameLabel, posterHeadlineLabel, posterTimeLabel, posterImageView, posterCommentLabel].forEach { addSubnode($0) }
     }
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
+        let textStack = ASStackLayoutSpec(direction: .vertical, spacing: 1.0, justifyContent: .spaceBetween, alignItems: .stretch, children: [posterNameLabel, posterHeadlineLabel, posterTimeLabel])
+        textStack.style.flexGrow = 1.0
+
+        let imageTextStack = ASStackLayoutSpec(direction: .horizontal,
+                                               spacing: 2.0,
+                                               justifyContent: .spaceBetween,
+                                               alignItems: .start,
+                                               children: [posterImageView,
+                                                          textStack])
+
+        let mainStack = ASStackLayoutSpec(direction: .vertical,
+                                          spacing: 3.0,
+                                          justifyContent: .start,
+                                          alignItems: .stretch,
+                                          children: [imageTextStack,
+                                                     posterCommentLabel])
+
+        let insetStack = ASInsetLayoutSpec(insets: UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 4.0),
+                                           child: mainStack)
+
+        return insetStack
     }
 }
 
-class SocialActionsNode: UIView {
-    let likeLabel: UILabel = {
-        let l = UILabel()
-        l.text = "Like"
+class SocialActionsNode: ASDisplayNode {
+    let likeLabel: ASTextNode = {
+        let l = ASTextNode()
+        l.attributedText = "Like".makeAttributedString()
         l.backgroundColor = .green
         return l
     }()
 
-    let commentLabel: UILabel = {
-        let l = UILabel()
-        l.text = "Comment"
-        l.backgroundColor = .green
-        l.textAlignment = .center
-        return l
-    }()
-
-    let shareLabel: UILabel = {
-        let l = UILabel()
-        l.text = "Share"
-        l.textAlignment = .right
+    let commentLabel: ASTextNode = {
+        let l = ASTextNode()
+        l.attributedText = "Comment".makeAttributedString()
         l.backgroundColor = .green
         return l
     }()
 
-    init() {
-        super.init(frame: .zero)
-
-        let views: [String: UIView] = [
-            "likeLabel": likeLabel,
-            "commentLabel": commentLabel,
-            "shareLabel": shareLabel
-        ]
-        addAutoLayoutSubviews(views)
-
-        addConstraints(withVisualFormat: "V:|-0-[likeLabel]-0-|", views: views)
-        addConstraints(withVisualFormat: "V:|-0-[commentLabel]-0-|", views: views)
-        addConstraints(withVisualFormat: "V:|-0-[shareLabel]-0-|", views: views)
-
-        addConstraints([
-            NSLayoutConstraint(item: likeLabel, attribute: .leadingMargin, relatedBy: .equal, toItem: self, attribute: .leadingMargin, multiplier: 1, constant: 0),
-            NSLayoutConstraint(item: commentLabel, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0),
-            NSLayoutConstraint(item: shareLabel, attribute: .trailingMargin, relatedBy: .equal, toItem: self, attribute: .trailingMargin, multiplier: 1, constant: 0)
-            ])
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-class TopBarNode: UIView {
-    let actionLabel: UILabel = UILabel()
-
-    let optionsLabel: UILabel = {
-        let l = UILabel()
-        l.text = "..."
-        l.setContentHuggingPriority(UILayoutPriority.required, for: .horizontal)
-        l.setContentCompressionResistancePriority(UILayoutPriority.required, for: .horizontal)
+    let shareLabel: ASTextNode = {
+        let l = ASTextNode()
+        l.attributedText = "Share".makeAttributedString()
+        l.backgroundColor = .green
         return l
     }()
 
-    init() {
-        super.init(frame: .zero)
-        let views: [String: UIView] = ["actionLabel": actionLabel, "optionsLabel": optionsLabel]
-        addAutoLayoutSubviews(views)
-        addConstraints(withVisualFormat: "H:|-0-[actionLabel]-0-[optionsLabel]-0-|", views: views)
-        addConstraints(withVisualFormat: "V:|-0-[actionLabel]-(>=0)-|", views: views)
-        addConstraints(withVisualFormat: "V:|-0-[optionsLabel]-(>=0)-|", views: views)
+    override init() {
+        super.init()
+        [likeLabel, commentLabel, shareLabel].forEach { addSubnode($0) }
     }
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
+        let mainStack = ASStackLayoutSpec(direction: .horizontal,
+                                          spacing: 0.0,
+                                          justifyContent: .spaceBetween,
+                                          alignItems: .start,
+                                          children: [likeLabel, commentLabel, shareLabel])
+        return mainStack
     }
 }
 
-private extension UIView {
+class TopBarNode: ASDisplayNode {
+    let actionLabel: ASTextNode = ASTextNode()
 
-    func addAutoLayoutSubviews(_ subviews: [String: UIView]) {
-        for (_, view) in subviews {
-            addAutoLayoutSubview(view)
-        }
+    let optionsLabel: ASTextNode = {
+        let l = ASTextNode()
+        l.attributedText = "...".makeAttributedString()
+        return l
+    }()
+
+    override init() {
+        super.init()
+        [actionLabel, optionsLabel].forEach { addSubnode($0) }
     }
 
-    func addAutoLayoutSubview(_ subview: UIView) {
-        subview.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(subview)
+    override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
+        let mainStack = ASStackLayoutSpec(direction: .horizontal,
+                                          spacing: 0.0,
+                                          justifyContent: .start,
+                                          alignItems: .start,
+                                          children: [actionLabel, optionsLabel])
+        actionLabel.style.flexGrow = 1.0
+        return mainStack
     }
+}
 
-    func addConstraints(withVisualFormat visualFormat: String, views: [String: UIView]) {
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: visualFormat, options: [], metrics: nil, views: views))
+private extension String {
+    func makeAttributedString() -> NSAttributedString {
+        return NSAttributedString(string: self, attributes: [.font: UIFont.systemFont(ofSize: 17.0)])
     }
 }
