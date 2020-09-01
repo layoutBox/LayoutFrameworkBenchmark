@@ -42,7 +42,7 @@ class TextureCollectionViewController: ASDKViewController<ASCollectionNode>, ASC
     }
 
     func collectionNode(_ collectionNode: ASCollectionNode, nodeForItemAt indexPath: IndexPath) -> ASCellNode {
-        let cell = FeedItemTextureView(data: data[indexPath.row])
+        let cell = FeedItemTextureNode(data: data[indexPath.row])
 
         return cell
     }

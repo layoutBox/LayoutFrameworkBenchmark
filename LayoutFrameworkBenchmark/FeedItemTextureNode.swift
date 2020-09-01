@@ -10,7 +10,7 @@ import UIKit
 import AsyncDisplayKit
 
 /// A LinkedIn feed item that is implemented with Texture.
-class FeedItemTextureView: ASCellNode {
+class FeedItemTextureNode: ASCellNode {
     let topBarView = TopBarNode()
     let miniProfileView = MiniProfileNode()
     let miniContentView = MiniContentNode()
