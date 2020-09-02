@@ -54,6 +54,11 @@ class BenchmarkViewController: UITableViewController {
             return CollectionViewControllerFeedItemPinLayoutView(data: data)
         }),
 
+        ViewControllerData(title: "Texture", factoryBlock: { viewCount in
+            let data = FeedItemData.generate(count: viewCount)
+            return TextureCollectionViewController(data: data)
+        }),
+
         ViewControllerData(title: "UIStackView", factoryBlock: { viewCount in
             if #available(iOS 9.0, *) {
                 let data = FeedItemData.generate(count: viewCount)

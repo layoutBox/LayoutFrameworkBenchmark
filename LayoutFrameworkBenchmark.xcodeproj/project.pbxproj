@@ -26,6 +26,8 @@
 		24661D0A1F4EFFF5002CB883 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24661D081F4EFFF5002CB883 /* LaunchScreen.storyboard */; };
 		639E5A2020DF62D700C6BCEA /* NKFrameLayoutKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E5A1F20DF62D700C6BCEA /* NKFrameLayoutKitView.swift */; };
 		BF3DC69820B560A400536177 /* FeedItemNotAutoLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3DC69720B560A400536177 /* FeedItemNotAutoLayoutView.swift */; };
+		E4A8A14124FE99B1009D872B /* FeedItemTextureNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A8A14024FE982E009D872B /* FeedItemTextureNode.swift */; };
+		E4A8A24F24FEDD14009D872B /* TextureCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A8A24E24FEDD14009D872B /* TextureCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		639E5A1F20DF62D700C6BCEA /* NKFrameLayoutKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NKFrameLayoutKitView.swift; sourceTree = "<group>"; };
 		73BD901DE3512A23A7603899 /* Pods-LayoutFrameworkBenchmark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LayoutFrameworkBenchmark.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LayoutFrameworkBenchmark/Pods-LayoutFrameworkBenchmark.debug.xcconfig"; sourceTree = "<group>"; };
 		BF3DC69720B560A400536177 /* FeedItemNotAutoLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemNotAutoLayoutView.swift; sourceTree = "<group>"; };
+		E4A8A14024FE982E009D872B /* FeedItemTextureNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemTextureNode.swift; sourceTree = "<group>"; };
+		E4A8A24E24FEDD14009D872B /* TextureCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 		2401BC741F4F017D00788998 /* Benchmarks */ = {
 			isa = PBXGroup;
 			children = (
+				E4A8A13F24FE981F009D872B /* Texture */,
 				2401BCA21F4F045600788998 /* AutoLayout */,
 				2401BC921F4F020D00788998 /* FlexLayout */,
 				2401BC8D1F4F01CC00788998 /* LayoutKit */,
@@ -208,6 +213,15 @@
 			name = NotAutoLayout;
 			sourceTree = "<group>";
 		};
+		E4A8A13F24FE981F009D872B /* Texture */ = {
+			isa = PBXGroup;
+			children = (
+				E4A8A14024FE982E009D872B /* FeedItemTextureNode.swift */,
+				E4A8A24E24FEDD14009D872B /* TextureCollectionViewController.swift */,
+			);
+			name = Texture;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -289,8 +303,12 @@
 				"${BUILT_PRODUCTS_DIR}/LayoutKit/LayoutKit.framework",
 				"${BUILT_PRODUCTS_DIR}/NKFrameLayoutKit/NKFrameLayoutKit.framework",
 				"${BUILT_PRODUCTS_DIR}/NotAutoLayout/NotAutoLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
+				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
 				"${BUILT_PRODUCTS_DIR}/PinLayout/PinLayout.framework",
 				"${PODS_ROOT}/Reveal-SDK/RevealServer/iOS/RevealServer.framework",
+				"${BUILT_PRODUCTS_DIR}/Texture/AsyncDisplayKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -298,8 +316,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LayoutKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NKFrameLayoutKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotAutoLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AsyncDisplayKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -331,6 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4A8A24F24FEDD14009D872B /* TextureCollectionViewController.swift in Sources */,
 				2401BCA11F4F044000788998 /* FeedItemUIStackView.swift in Sources */,
 				2401BC8B1F4F018C00788998 /* Stopwatch.swift in Sources */,
 				2401BC8F1F4F01D600788998 /* FeedItemLayoutKitView.swift in Sources */,
@@ -340,6 +363,7 @@
 				2401BC821F4F018C00788998 /* CollectionViewController.swift in Sources */,
 				2401BC9E1F4F042700788998 /* FeedItemManualView.swift in Sources */,
 				2401BC811F4F018C00788998 /* BenchmarkViewController.swift in Sources */,
+				E4A8A14124FE99B1009D872B /* FeedItemTextureNode.swift in Sources */,
 				BF3DC69820B560A400536177 /* FeedItemNotAutoLayoutView.swift in Sources */,
 				639E5A2020DF62D700C6BCEA /* NKFrameLayoutKitView.swift in Sources */,
 				2401BC9B1F4F03B300788998 /* ProfileCardLayout.swift in Sources */,

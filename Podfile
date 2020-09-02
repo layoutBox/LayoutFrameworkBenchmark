@@ -14,6 +14,7 @@ target 'LayoutFrameworkBenchmark' do
     pod 'NotAutoLayout'
     pod 'NKFrameLayoutKit'
     pod 'PinLayout'
+    pod 'Texture'
 
     pod 'Reveal-SDK'
 end

@@ -3,8 +3,43 @@ PODS:
   - LayoutKit (10.1.0)
   - NKFrameLayoutKit (2.5)
   - NotAutoLayout (3.2.0)
+  - PINCache (3.0.1-beta.8):
+    - PINCache/Arc-exception-safe (= 3.0.1-beta.8)
+    - PINCache/Core (= 3.0.1-beta.8)
+  - PINCache/Arc-exception-safe (3.0.1-beta.8):
+    - PINCache/Core
+  - PINCache/Core (3.0.1-beta.8):
+    - PINOperation (~> 1.1.1)
   - PinLayout (1.8.13)
+  - PINOperation (1.1.2)
+  - PINRemoteImage/Core (3.0.0):
+    - PINOperation
+  - PINRemoteImage/iOS (3.0.0):
+    - PINRemoteImage/Core
+  - PINRemoteImage/PINCache (3.0.0):
+    - PINCache (= 3.0.1-beta.8)
+    - PINRemoteImage/Core
   - Reveal-SDK (26)
+  - Texture (3.0.0):
+    - Texture/AssetsLibrary (= 3.0.0)
+    - Texture/Core (= 3.0.0)
+    - Texture/MapKit (= 3.0.0)
+    - Texture/Photos (= 3.0.0)
+    - Texture/PINRemoteImage (= 3.0.0)
+    - Texture/Video (= 3.0.0)
+  - Texture/AssetsLibrary (3.0.0):
+    - Texture/Core
+  - Texture/Core (3.0.0)
+  - Texture/MapKit (3.0.0):
+    - Texture/Core
+  - Texture/Photos (3.0.0):
+    - Texture/Core
+  - Texture/PINRemoteImage (3.0.0):
+    - PINRemoteImage/iOS (~> 3.0.0)
+    - PINRemoteImage/PINCache
+    - Texture/Core
+  - Texture/Video (3.0.0):
+    - Texture/Core
 
 DEPENDENCIES:
   - FlexLayout
@@ -13,6 +48,7 @@ DEPENDENCIES:
   - NotAutoLayout
   - PinLayout
   - Reveal-SDK
+  - Texture
 
 SPEC REPOS:
   trunk:
@@ -20,17 +56,25 @@ SPEC REPOS:
     - LayoutKit
     - NKFrameLayoutKit
     - NotAutoLayout
+    - PINCache
     - PinLayout
+    - PINOperation
+    - PINRemoteImage
     - Reveal-SDK
+    - Texture
 
 SPEC CHECKSUMS:
   FlexLayout: 257b6763526bc957d2abc2b77a05760b86ca0e21
   LayoutKit: 66478bb3af5ce4519a056d9465bc4c7585d2350b
   NKFrameLayoutKit: 8485fd4fb04c2c99e38e4dfd4b65a99ce10689b9
   NotAutoLayout: 4723ad82a21a7c6c60c823fff7f7c29467811b92
+  PINCache: 534fd41d358d828dfdf227a0d327f3673a65e20b
   PinLayout: e41a50260a76508b7a7fcee8955c76639adc69bc
+  PINOperation: 24b774353ca248fcf87d67b2d61eef42087c125a
+  PINRemoteImage: e2b89e19fb6e77ffc099f9d9f3b3fe1745e3f9f9
   Reveal-SDK: 5f94f14aff3d5f2a49f246edcd266fa4472679e9
+  Texture: 2f109e937850d94d1d07232041c9c7313ccddb81
 
-PODFILE CHECKSUM: d74752ab55b8b4e940de10f66499bdb34a26c294
+PODFILE CHECKSUM: e88cf8183859e80454f97e5a3e30c34f9c220e27
 
 COCOAPODS: 1.9.3
