@@ -78,7 +78,7 @@ Fast Swift UIViews layouting without auto layout. No magic, pure code, full cont
 
 * [**Texture**](https://github.com/TextureGroup/Texture)  
 Optimize your app by making user interfaces thread safe, which means that you will be able to shift all expensive views into background threads.  
-[Texture benchmark's source code](https://github.com/wsu-nyt/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/FeedItemTextureNode.swift)
+[Texture benchmark's source code](https://github.com/layoutBox/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/FeedItemTextureNode.swift)
 
 * **UIStackViews**  
 Apple's UIStackViews.  
