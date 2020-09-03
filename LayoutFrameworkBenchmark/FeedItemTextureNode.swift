@@ -32,7 +32,7 @@ class FeedItemTextureNode: ASCellNode {
 
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
         let mainStack = ASStackLayoutSpec(direction: .vertical,
-                                          spacing: 0.0,
+                                          spacing: 4.0,
                                           justifyContent: .spaceBetween,
                                           alignItems: .stretch,
                                           children: [topBarView, miniProfileView, miniContentView, socialActionsView, commentView])
@@ -57,9 +57,9 @@ class CommentNode: ASDisplayNode {
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
         actorCommentLabel.style.flexGrow = 1.0
         let mainStack = ASStackLayoutSpec(direction: .horizontal,
-                                          spacing: 0.0,
+                                          spacing: 4.0,
                                           justifyContent: .spaceBetween,
-                                          alignItems: .start,
+                                          alignItems: .center,
                                           children: [actorImageView, actorCommentLabel])
         return mainStack
     }
@@ -96,8 +96,6 @@ class MiniProfileNode: ASDisplayNode {
     let posterImageView: ASImageNode = {
         let i = ASImageNode()
         i.image = UIImage(named: "50x50.png")
-        i.backgroundColor = UIColor.orange
-        i.contentMode = .center
         return i
     }()
 
@@ -128,13 +126,13 @@ class MiniProfileNode: ASDisplayNode {
     }
 
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
-        let textStack = ASStackLayoutSpec(direction: .vertical, spacing: 1.0, justifyContent: .spaceBetween, alignItems: .stretch, children: [posterNameLabel, posterHeadlineLabel, posterTimeLabel])
+        let textStack = ASStackLayoutSpec(direction: .vertical, spacing: 2.0, justifyContent: .spaceBetween, alignItems: .stretch, children: [posterNameLabel, posterHeadlineLabel, posterTimeLabel])
         textStack.style.flexGrow = 1.0
 
         let imageTextStack = ASStackLayoutSpec(direction: .horizontal,
-                                               spacing: 2.0,
+                                               spacing: 4.0,
                                                justifyContent: .spaceBetween,
-                                               alignItems: .start,
+                                               alignItems: .center,
                                                children: [posterImageView,
                                                           textStack])
 
