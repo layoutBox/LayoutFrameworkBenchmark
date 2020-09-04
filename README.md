@@ -76,6 +76,10 @@ Layout your views without Auto Layout constraints, in a much more swifty way.
 Fast Swift UIViews layouting without auto layout. No magic, pure code, full control and blazing fast. Concise syntax, intuitive, readable & chainable.  
 [PinLayout benchmark's source code](https://github.com/layoutBox/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/Benchmarks/PinLayout/FeedItemPinLayoutView.swift)
 
+* [**Texture**](https://github.com/TextureGroup/Texture)  
+Optimize your app by making user interfaces thread safe, which means that you will be able to shift all expensive views into background threads.  
+[Texture benchmark's source code](https://github.com/layoutBox/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/FeedItemTextureNode.swift)
+
 * **UIStackViews**  
 Apple's UIStackViews.  
 [UIStackViews benchmark's source code](https://github.com/layoutBox/LayoutFrameworkBenchmark/blob/master/LayoutFrameworkBenchmark/Benchmarks/UIStackView/FeedItemUIStackView.swift)
@@ -98,6 +102,7 @@ Here are the benchmark rendering results to compare visual results:
 * [Manual layout rendering result](docs_markdown/benchmark_result_ManualLayout.png)
 * [NKFrameLayoutKit rendering result](docs_markdown/benchmark_result_NKFrameLayoutKit.png)
 * [PinLayout rendering result](docs_markdown/benchmark_result_PinLayout.png)
+* [Texture rendering result](docs_markdown/benchmark_result_Texture.png)
 
 :pushpin: Some work would be required to adjust the layout so that they all match perfectly. 
 
