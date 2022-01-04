@@ -1,49 +1,49 @@
 PODS:
-  - FlexLayout (1.3.17)
+  - FlexLayout (1.3.23)
   - LayoutKit (10.1.0)
   - NKFrameLayoutKit (2.5)
   - NotAutoLayout (3.2.0)
-  - PINCache (3.0.1-beta.8):
-    - PINCache/Arc-exception-safe (= 3.0.1-beta.8)
-    - PINCache/Core (= 3.0.1-beta.8)
-  - PINCache/Arc-exception-safe (3.0.1-beta.8):
+  - PINCache (3.0.3):
+    - PINCache/Arc-exception-safe (= 3.0.3)
+    - PINCache/Core (= 3.0.3)
+  - PINCache/Arc-exception-safe (3.0.3):
     - PINCache/Core
-  - PINCache/Core (3.0.1-beta.8):
-    - PINOperation (~> 1.1.1)
-  - PinLayout (1.8.13)
-  - PINOperation (1.1.2)
-  - PINRemoteImage/Core (3.0.0):
+  - PINCache/Core (3.0.3):
+    - PINOperation (~> 1.2.1)
+  - PinLayout (1.10.0)
+  - PINOperation (1.2.1)
+  - PINRemoteImage/Core (3.0.3):
     - PINOperation
-  - PINRemoteImage/iOS (3.0.0):
+  - PINRemoteImage/iOS (3.0.3):
     - PINRemoteImage/Core
-  - PINRemoteImage/PINCache (3.0.0):
-    - PINCache (= 3.0.1-beta.8)
+  - PINRemoteImage/PINCache (3.0.3):
+    - PINCache (~> 3.0.3)
     - PINRemoteImage/Core
-  - Reveal-SDK (26)
-  - Texture (3.0.0):
-    - Texture/AssetsLibrary (= 3.0.0)
-    - Texture/Core (= 3.0.0)
-    - Texture/MapKit (= 3.0.0)
-    - Texture/Photos (= 3.0.0)
-    - Texture/PINRemoteImage (= 3.0.0)
-    - Texture/Video (= 3.0.0)
-  - Texture/AssetsLibrary (3.0.0):
+  - Reveal-SDK (33)
+  - Texture (3.1.0):
+    - Texture/AssetsLibrary (= 3.1.0)
+    - Texture/Core (= 3.1.0)
+    - Texture/MapKit (= 3.1.0)
+    - Texture/Photos (= 3.1.0)
+    - Texture/PINRemoteImage (= 3.1.0)
+    - Texture/Video (= 3.1.0)
+  - Texture/AssetsLibrary (3.1.0):
     - Texture/Core
-  - Texture/Core (3.0.0)
-  - Texture/MapKit (3.0.0):
+  - Texture/Core (3.1.0)
+  - Texture/MapKit (3.1.0):
     - Texture/Core
-  - Texture/Photos (3.0.0):
+  - Texture/Photos (3.1.0):
     - Texture/Core
-  - Texture/PINRemoteImage (3.0.0):
+  - Texture/PINRemoteImage (3.1.0):
     - PINRemoteImage/iOS (~> 3.0.0)
     - PINRemoteImage/PINCache
     - Texture/Core
-  - Texture/Video (3.0.0):
+  - Texture/Video (3.1.0):
     - Texture/Core
 
 DEPENDENCIES:
   - FlexLayout
-  - LayoutKit
+  - LayoutKit (from `https://github.com/LinkedInAttic/LayoutKit.git`)
   - NKFrameLayoutKit
   - NotAutoLayout
   - PinLayout
@@ -53,7 +53,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - FlexLayout
-    - LayoutKit
     - NKFrameLayoutKit
     - NotAutoLayout
     - PINCache
@@ -63,18 +62,27 @@ SPEC REPOS:
     - Reveal-SDK
     - Texture
 
+EXTERNAL SOURCES:
+  LayoutKit:
+    :git: https://github.com/LinkedInAttic/LayoutKit.git
+
+CHECKOUT OPTIONS:
+  LayoutKit:
+    :commit: 1f1b067b6b11a0779ea6b6ccd976585a1d7bb79b
+    :git: https://github.com/LinkedInAttic/LayoutKit.git
+
 SPEC CHECKSUMS:
-  FlexLayout: 257b6763526bc957d2abc2b77a05760b86ca0e21
+  FlexLayout: 5b44c0538e7eaa2110e3160dfdfb74611676fb91
   LayoutKit: 66478bb3af5ce4519a056d9465bc4c7585d2350b
   NKFrameLayoutKit: 8485fd4fb04c2c99e38e4dfd4b65a99ce10689b9
   NotAutoLayout: 4723ad82a21a7c6c60c823fff7f7c29467811b92
-  PINCache: 534fd41d358d828dfdf227a0d327f3673a65e20b
-  PinLayout: e41a50260a76508b7a7fcee8955c76639adc69bc
-  PINOperation: 24b774353ca248fcf87d67b2d61eef42087c125a
-  PINRemoteImage: e2b89e19fb6e77ffc099f9d9f3b3fe1745e3f9f9
-  Reveal-SDK: 5f94f14aff3d5f2a49f246edcd266fa4472679e9
-  Texture: 2f109e937850d94d1d07232041c9c7313ccddb81
+  PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
+  PinLayout: e50e9a748b632905fca6e67043ea4b05d6c92186
+  PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
+  PINRemoteImage: f1295b29f8c5e640e25335a1b2bd9d805171bd01
+  Reveal-SDK: effba1c940b8337195563c425a6b5862ec875caa
+  Texture: 2e8ab2519452515f7f5a520f5a8f7e0a413abfa3
 
-PODFILE CHECKSUM: e88cf8183859e80454f97e5a3e30c34f9c220e27
+PODFILE CHECKSUM: dca07728abcbc052a30cef591b8cd349297c894b
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.11.2
