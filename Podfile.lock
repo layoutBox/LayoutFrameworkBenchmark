@@ -1,45 +1,46 @@
 PODS:
-  - FlexLayout (1.3.23)
+  - FlexLayout (2.2.2):
+    - Yoga (= 3.2.1)
   - LayoutKit (10.1.0)
   - NKFrameLayoutKit (2.5)
   - NotAutoLayout (3.2.0)
-  - PINCache (3.0.3):
-    - PINCache/Arc-exception-safe (= 3.0.3)
-    - PINCache/Core (= 3.0.3)
-  - PINCache/Arc-exception-safe (3.0.3):
+  - PINCache (3.0.4):
+    - PINCache/Arc-exception-safe (= 3.0.4)
+    - PINCache/Core (= 3.0.4)
+  - PINCache/Arc-exception-safe (3.0.4):
     - PINCache/Core
-  - PINCache/Core (3.0.3):
-    - PINOperation (~> 1.2.1)
-  - PinLayout (1.10.0)
-  - PINOperation (1.2.1)
-  - PINRemoteImage/Core (3.0.3):
+  - PINCache/Core (3.0.4):
+    - PINOperation (~> 1.2.3)
+  - PinLayout (1.10.6)
+  - PINOperation (1.2.3)
+  - PINRemoteImage/Core (3.0.4):
     - PINOperation
-  - PINRemoteImage/iOS (3.0.3):
+  - PINRemoteImage/iOS (3.0.4):
     - PINRemoteImage/Core
-  - PINRemoteImage/PINCache (3.0.3):
-    - PINCache (~> 3.0.3)
+  - PINRemoteImage/PINCache (3.0.4):
+    - PINCache (~> 3.0.4)
     - PINRemoteImage/Core
-  - Reveal-SDK (33)
-  - Texture (3.1.0):
-    - Texture/AssetsLibrary (= 3.1.0)
-    - Texture/Core (= 3.1.0)
-    - Texture/MapKit (= 3.1.0)
-    - Texture/Photos (= 3.1.0)
-    - Texture/PINRemoteImage (= 3.1.0)
-    - Texture/Video (= 3.1.0)
-  - Texture/AssetsLibrary (3.1.0):
+  - Texture (3.2.0):
+    - Texture/AssetsLibrary (= 3.2.0)
+    - Texture/Core (= 3.2.0)
+    - Texture/MapKit (= 3.2.0)
+    - Texture/Photos (= 3.2.0)
+    - Texture/PINRemoteImage (= 3.2.0)
+    - Texture/Video (= 3.2.0)
+  - Texture/AssetsLibrary (3.2.0):
     - Texture/Core
-  - Texture/Core (3.1.0)
-  - Texture/MapKit (3.1.0):
+  - Texture/Core (3.2.0)
+  - Texture/MapKit (3.2.0):
     - Texture/Core
-  - Texture/Photos (3.1.0):
+  - Texture/Photos (3.2.0):
     - Texture/Core
-  - Texture/PINRemoteImage (3.1.0):
+  - Texture/PINRemoteImage (3.2.0):
     - PINRemoteImage/iOS (~> 3.0.0)
     - PINRemoteImage/PINCache
     - Texture/Core
-  - Texture/Video (3.1.0):
+  - Texture/Video (3.2.0):
     - Texture/Core
+  - Yoga (3.2.1)
 
 DEPENDENCIES:
   - FlexLayout
@@ -47,7 +48,6 @@ DEPENDENCIES:
   - NKFrameLayoutKit
   - NotAutoLayout
   - PinLayout
-  - Reveal-SDK
   - Texture
 
 SPEC REPOS:
@@ -59,8 +59,8 @@ SPEC REPOS:
     - PinLayout
     - PINOperation
     - PINRemoteImage
-    - Reveal-SDK
     - Texture
+    - Yoga
 
 EXTERNAL SOURCES:
   LayoutKit:
@@ -72,17 +72,17 @@ CHECKOUT OPTIONS:
     :git: https://github.com/LinkedInAttic/LayoutKit.git
 
 SPEC CHECKSUMS:
-  FlexLayout: 5b44c0538e7eaa2110e3160dfdfb74611676fb91
+  FlexLayout: c73d8da295a01937efece5531e12a692a3b9dd07
   LayoutKit: 66478bb3af5ce4519a056d9465bc4c7585d2350b
   NKFrameLayoutKit: 8485fd4fb04c2c99e38e4dfd4b65a99ce10689b9
   NotAutoLayout: 4723ad82a21a7c6c60c823fff7f7c29467811b92
-  PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
-  PinLayout: e50e9a748b632905fca6e67043ea4b05d6c92186
-  PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
-  PINRemoteImage: f1295b29f8c5e640e25335a1b2bd9d805171bd01
-  Reveal-SDK: effba1c940b8337195563c425a6b5862ec875caa
-  Texture: 2e8ab2519452515f7f5a520f5a8f7e0a413abfa3
+  PINCache: d9a87a0ff397acffe9e2f0db972ac14680441158
+  PinLayout: e2fceb4cbfdf49f3569fc242a7dfa0da4fb9aa06
+  PINOperation: fb563bcc9c32c26d6c78aaff967d405aa2ee74a7
+  PINRemoteImage: 6256a644f4996991f124811763c7286b2a63ff94
+  Texture: 61e86ea2ee124f545be40293b54b5b8986006da2
+  Yoga: 636ce73bd247407928a7df089f3bc3675916b3ff
 
-PODFILE CHECKSUM: f70dfc241e0d33e495e99861a4e22519960087c6
+PODFILE CHECKSUM: 995a4143850fbe450aace4486444d8fba0d0e46e
 
 COCOAPODS: 1.16.2

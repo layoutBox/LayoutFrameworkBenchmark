@@ -4,7 +4,7 @@ use_frameworks!
 
 project 'LayoutFrameworkBenchmark.xcodeproj'
 
-platform :ios, '10.0'
+platform :ios, '15.0'
 
 inhibit_all_warnings!
 
@@ -15,6 +15,4 @@ target 'LayoutFrameworkBenchmark' do
     pod 'NKFrameLayoutKit'
     pod 'PinLayout'
     pod 'Texture'
-
-    pod 'Reveal-SDK'
 end
