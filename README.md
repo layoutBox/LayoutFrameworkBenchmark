@@ -38,7 +38,7 @@ It displays the performance when layouting UICollectionView cells. This graph sh
 
 The **Y axis** indicates the **number of seconds** to render all cells.
 
-<a href="docs_markdown/benchmark_comparison_all.png"><img src="docs_markdown/benchmark_comparison_all.png"/></a>
+<a href="docs_markdown/benchmark_comparison_all.png"><img src="docs_markdown/benchmark_comparison_all.png"/></a> 
 <br>
 
 
@@ -115,6 +115,9 @@ You can see the benchmark's data and charts in this **[Google Spreadsheet Docume
 ##### Details for different devices
 
 The **X axis** in following charts indicates the **number of cells** contained for each pass. The **Y axis** indicates the **number of seconds** to render all cells from one pass.
+
+<a href="docs_markdown/benchmark_iphonexs.png"><img src="docs_markdown/benchmark_iphone16.png"/></a>
+<br>
 
 <a href="docs_markdown/benchmark_iphonexs.png"><img src="docs_markdown/benchmark_iphone13pro.png"/></a>
 <br>

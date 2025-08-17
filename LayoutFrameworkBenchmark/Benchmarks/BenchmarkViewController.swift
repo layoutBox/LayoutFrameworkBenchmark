@@ -24,7 +24,7 @@ class BenchmarkViewController: UITableViewController {
             return CollectionViewControllerFeedItemAutoLayoutView(data: data)
         }),
         
-        ViewControllerData(title: "FlexLayout 1.3", factoryBlock: { viewCount in
+        ViewControllerData(title: "FlexLayout 2.2", factoryBlock: { viewCount in
             let data = FeedItemData.generate(count: viewCount)
             return CollectionViewControllerFeedItemFlexLayoutView(data: data)
         }),
@@ -49,12 +49,12 @@ class BenchmarkViewController: UITableViewController {
             return CollectionViewControllerFeedItemNotAutoLayoutView(data: data)
         }),
         
-        ViewControllerData(title: "PinLayout 1.10", factoryBlock: { viewCount in
+        ViewControllerData(title: "PinLayout 1.10.6", factoryBlock: { viewCount in
             let data = FeedItemData.generate(count: viewCount)
             return CollectionViewControllerFeedItemPinLayoutView(data: data)
         }),
 
-        ViewControllerData(title: "Texture 3.1", factoryBlock: { viewCount in
+        ViewControllerData(title: "Texture 3.2", factoryBlock: { viewCount in
             let data = FeedItemData.generate(count: viewCount)
             return TextureCollectionViewController(data: data)
         }),
