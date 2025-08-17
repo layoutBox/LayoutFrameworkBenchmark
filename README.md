@@ -15,9 +15,8 @@
 Benchmark the performances of various Swift layout frameworks.
 
 ### Requirements
-* iOS 8.0+
-* Xcode 8.0+
-* Swift 3.0+
+* iOS 14.0+
+* Xcode 16.0+
 
 # History <a name="history"></a>
 This project is a spin-off of the excellent [LayoutKit benchmark](https://github.com/linkedin/LayoutKit). The benchmark has been extracted to add other iOS layout frameworks and to compare them.
@@ -117,23 +116,13 @@ You can see the benchmark's data and charts in this **[Google Spreadsheet Docume
 
 The **X axis** in following charts indicates the **number of cells** contained for each pass. The **Y axis** indicates the **number of seconds** to render all cells from one pass.
 
+<a href="docs_markdown/benchmark_iphonexs.png"><img src="docs_markdown/benchmark_iphone13pro.png"/></a>
+<br>
+
 <a href="docs_markdown/benchmark_iphonexs.png"><img src="docs_markdown/benchmark_iphonexs.png"/></a>
 <br>
 
-
 <a href="docs_markdown/benchmark_iphonex.png"><img src="docs_markdown/benchmark_iphonex.png"/></a>
-<br>
-
-<a href="docs_markdown/benchmark_iphone7.png"><img src="docs_markdown/benchmark_iphone7.png"/></a>
-<br>
-
-<a href="docs_markdown/benchmark_iphone6s.png"><img src="docs_markdown/benchmark_iphone6s.png"/></a>
-<br>
-
-<a href="docs_markdown/benchmark_iphone6.png"><img src="docs_markdown/benchmark_iphone6.png"/></a>
-<br>
-
-<a href="docs_markdown/benchmark_iphone5s.png"><img src="docs_markdown/benchmark_iphone5s.png"/></a>
 <br>
 
 
